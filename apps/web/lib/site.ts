@@ -13,6 +13,8 @@ export const SITE = {
   description:
     "Senior engineer helping SaaS & startups ship reliable, production-grade AI features and automations. 8+ years, ex-Immunefi & Thrive Market. Book a free fit call.",
   ogImage: "/og.png",
+  // Public résumé — stable path (no year) so the URL never changes on update.
+  resume: "/yovany-luis-cv.pdf",
 } as const;
 
 export const SOCIAL = {

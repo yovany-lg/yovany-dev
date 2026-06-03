@@ -380,6 +380,9 @@ function About() {
             <a className="about-link" href={SOCIAL.x} target="_blank" rel="noopener noreferrer">
               X ↗
             </a>
+            <a className="about-link" href={SITE.resume} target="_blank" rel="noopener noreferrer">
+              Résumé ↗
+            </a>
             <a className="about-link" href={`mailto:${SITE.email}`}>
               Email ↗
             </a>
