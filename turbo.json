@@ -1,6 +1,16 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
   "ui": "tui",
+  "globalEnv": [
+    "NEXT_PUBLIC_BOOKING_URL",
+    "NEXT_PUBLIC_LEAD_MAGNET_URL",
+    "NEXT_PUBLIC_POSTHOG_KEY",
+    "NEXT_PUBLIC_POSTHOG_HOST",
+    "RESEND_API_KEY",
+    "RESEND_FROM",
+    "CONVERTKIT_API_KEY",
+    "CONVERTKIT_FORM_ID"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
