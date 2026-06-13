@@ -9,7 +9,9 @@
     "RESEND_API_KEY",
     "RESEND_FROM",
     "CONVERTKIT_API_KEY",
-    "CONVERTKIT_FORM_ID"
+    "CONVERTKIT_FORM_ID",
+    "NEXT_PUBLIC_SC_WHATSAPP",
+    "NEXT_PUBLIC_SC_BOOKING_URL"
   ],
   "tasks": {
     "build": {

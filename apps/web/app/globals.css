@@ -1031,6 +1031,444 @@
 }
 .call-back:hover { color: var(--color-accent); }
 
+/* ============================================================
+   Sistema de Clientes — Spanish local-business subtree
+   Reuses the studio design system with a slightly warmer, more
+   direct treatment. Scoped under .sc-root + .sc-* classes so it
+   never affects the English AI site.
+   ============================================================ */
+.sc-root {
+  /* A touch warmer than the AI site's cool off-white. */
+  background: #faf8f4;
+}
+
+/* ----- Nav ----- */
+.sc-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in oklab, #faf8f4 88%, transparent);
+  backdrop-filter: blur(12px) saturate(130%);
+  border-bottom: 1px solid var(--color-hairline);
+}
+.sc-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 4.25rem;
+}
+.sc-nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.sc-nav-cta { flex: none; }
+
+/* ----- Shared section heading ----- */
+.sc-h2 {
+  font-size: var(--text-h2);
+  margin-top: 1rem;
+  max-width: 20ch;
+}
+.sc-lead-copy {
+  font-size: var(--text-lead);
+  color: var(--color-ink-muted);
+  margin-top: 1.1rem;
+  max-width: 50ch;
+}
+
+/* ----- Hero ----- */
+.sc-hero {
+  padding-block: clamp(3rem, 8vw, 6rem) clamp(2.5rem, 6vw, 4.5rem);
+}
+.sc-hero-h1 {
+  font-size: var(--text-display);
+  font-weight: 800;
+  margin-top: 1.4rem;
+  max-width: 18ch;
+}
+.sc-hero-sub {
+  font-size: var(--text-lead);
+  color: var(--color-ink-muted);
+  max-width: 52ch;
+  margin-top: 1.5rem;
+}
+.sc-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+.sc-hero-meta {
+  margin-top: 1.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-faint);
+}
+
+/* WhatsApp-green primary button variant inside the SC subtree. */
+.sc-root .btn-primary[data-cta="sc-whatsapp"] {
+  background: #128c4b;
+}
+.sc-root .btn-primary[data-cta="sc-whatsapp"]:hover {
+  background: #0f7a41;
+}
+
+/* ----- Cómo funciona: steps ----- */
+.sc-steps {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2.8rem;
+}
+@media (min-width: 760px) {
+  .sc-steps { grid-template-columns: repeat(3, 1fr); }
+}
+.sc-step { padding: clamp(1.5rem, 3vw, 2rem); }
+.sc-step-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-accent);
+}
+.sc-step-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-h3);
+  letter-spacing: -0.02em;
+  margin-top: 0.9rem;
+}
+.sc-step-text {
+  color: var(--color-ink-muted);
+  font-size: 0.98rem;
+  margin-top: 0.7rem;
+}
+
+/* ----- Chat example ----- */
+.sc-chat {
+  margin-top: 2.5rem;
+  max-width: 38rem;
+}
+.sc-chat-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+  margin-bottom: 1.2rem;
+}
+.sc-chat-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.4rem;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-hairline);
+  border-radius: 16px;
+}
+.sc-bubble {
+  max-width: 80%;
+  padding: 0.7rem 1rem;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.sc-bubble-in {
+  align-self: flex-start;
+  background: var(--color-surface);
+  border: 1px solid var(--color-hairline);
+  border-bottom-left-radius: 4px;
+}
+.sc-bubble-out {
+  align-self: flex-end;
+  background: #d8f5e3;
+  color: #0c3a22;
+  border-bottom-right-radius: 4px;
+}
+
+/* ----- Qué incluye ----- */
+.sc-incluye {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2.8rem;
+}
+@media (min-width: 760px) {
+  .sc-incluye { grid-template-columns: repeat(2, 1fr); }
+}
+.sc-incluye-col { padding: clamp(1.6rem, 3vw, 2.2rem); }
+.sc-incluye-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-h3);
+  letter-spacing: -0.02em;
+}
+.sc-list {
+  list-style: none;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+.sc-list li {
+  position: relative;
+  padding-left: 1.7rem;
+  color: var(--color-ink-muted);
+  font-size: 0.98rem;
+}
+.sc-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--color-accent-soft);
+  border: 1.5px solid var(--color-accent);
+}
+.sc-addons { margin-top: 2.2rem; }
+.sc-addons-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+  margin-bottom: 1rem;
+}
+.sc-addons-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.sc-addons-list li {
+  font-size: 0.84rem;
+  color: var(--color-ink-muted);
+  background: var(--color-surface);
+  border: 1px solid var(--color-hairline);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+}
+
+/* ----- ROI calculator ----- */
+.sc-roi-wrap { max-width: 44rem; }
+.sc-roi {
+  margin-top: 2.4rem;
+  padding: clamp(1.6rem, 4vw, 2.4rem);
+  display: grid;
+  gap: 1.6rem;
+}
+.sc-roi-label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.9rem;
+}
+.sc-roi-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-base);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+.sc-roi-input-wrap:focus-within { border-color: var(--color-accent); }
+.sc-roi-input {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: var(--color-ink);
+  outline: none;
+  width: 100%;
+}
+.sc-roi-mxn {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--color-ink-faint);
+}
+.sc-roi-out {
+  border-top: 1px solid var(--color-hairline);
+  padding-top: 1.4rem;
+}
+.sc-roi-result {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+.sc-roi-result strong { color: var(--color-accent); font-weight: 700; }
+.sc-roi-hint { color: var(--color-ink-muted); }
+.sc-roi-base {
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
+  color: var(--color-ink-faint);
+}
+
+/* ----- Por qué conmigo ----- */
+.sc-porque { max-width: 46rem; }
+.sc-porque-body {
+  font-size: var(--text-lead);
+  color: var(--color-ink-muted);
+  margin-top: 1.4rem;
+}
+
+/* ----- Precio ----- */
+.sc-precio {
+  padding: clamp(1.8rem, 4vw, 3rem);
+  max-width: 52rem;
+}
+.sc-precio-line {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  letter-spacing: -0.03em;
+  margin-top: 1rem;
+}
+.sc-precio-nota {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-top: 0.9rem;
+}
+.sc-precio-comp {
+  color: var(--color-ink-muted);
+  margin-top: 1.3rem;
+  max-width: 50ch;
+}
+.sc-precio-cta { margin-top: 1.8rem; }
+
+/* ----- CTA final + lead form ----- */
+.sc-final-grid {
+  display: grid;
+  gap: clamp(2.2rem, 5vw, 3.5rem);
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .sc-final-grid { grid-template-columns: 1.05fr 0.95fr; }
+}
+.sc-final-sub {
+  font-size: var(--text-lead);
+  color: var(--color-ink-muted);
+  margin-top: 1.3rem;
+  max-width: 46ch;
+}
+.sc-final-card { padding: clamp(1.6rem, 4vw, 2.2rem); }
+.sc-final-card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+}
+.sc-final-card-text {
+  color: var(--color-ink-muted);
+  font-size: 0.95rem;
+  margin-top: 0.6rem;
+}
+.sc-lead { margin-top: 1.4rem; }
+.sc-lead-fields { display: grid; gap: 0.7rem; }
+.sc-lead-input {
+  background: var(--color-base);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: 10px;
+  padding: 0.85rem 1.1rem;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  transition: border-color 0.2s var(--ease-out-soft);
+}
+.sc-lead-input::placeholder { color: var(--color-ink-faint); }
+.sc-lead-input:focus { outline: none; border-color: var(--color-accent); }
+.sc-lead .btn { margin-top: 0.3rem; }
+.sc-lead-success { color: #128c4b; font-weight: 600; }
+.sc-lead-error { color: #c0241a; margin-top: 0.8rem; font-size: 0.9rem; }
+.sc-lead-privacy {
+  margin-top: 0.9rem;
+  font-size: 0.78rem;
+  color: var(--color-ink-faint);
+}
+
+/* ----- Footer ----- */
+.sc-footer {
+  border-top: 1px solid var(--color-hairline);
+  padding-block: 3rem;
+}
+.sc-footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.sc-footer-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+}
+.sc-footer-meta {
+  color: var(--color-ink-faint);
+  font-size: 0.86rem;
+  margin-top: 0.4rem;
+}
+.sc-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+}
+.sc-footer-links a { transition: color 0.2s var(--ease-out-soft); }
+.sc-footer-links a:hover { color: var(--color-accent); }
+.sc-footer-copy {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--color-hairline);
+  font-size: 0.78rem;
+  color: var(--color-ink-faint);
+}
+
+/* ----- Sticky WhatsApp (mobile only) ----- */
+.sc-sticky-wa {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #128c4b;
+  color: #fff;
+  padding: 0.85rem 1.1rem;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.92rem;
+  box-shadow: 0 12px 30px -10px rgba(18, 140, 75, 0.6);
+}
+.sc-sticky-wa-label { line-height: 1; }
+@media (min-width: 760px) {
+  .sc-sticky-wa { display: none; }
+}
+
 /* Respect reduced-motion everywhere. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

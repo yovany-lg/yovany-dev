@@ -49,3 +49,33 @@ export const LEAD_MAGNET = {
   title: "5 Reasons AI Features Fail in Production (and how to fix them)",
   pdfPath: process.env.NEXT_PUBLIC_LEAD_MAGNET_URL ?? "/guide.pdf",
 } as const;
+
+/**
+ * "Sistema de Clientes" — Spanish lead-gen subtree for local Mexican service
+ * businesses (/sistema-de-clientes/*). Kept isolated from the English AI site.
+ * Same graceful-degradation house style: missing env → CTAs fall back to email
+ * instead of pointing at a broken link.
+ */
+export const SC = {
+  /** Yovany's sales WhatsApp, digits only with country code (e.g. "5213312345678"). */
+  waNumber: (process.env.NEXT_PUBLIC_SC_WHATSAPP ?? "").replace(/[^\d]/g, ""),
+  /** Cal.com event type for the 15-min "Diagnóstico" booking. */
+  bookingUrl: process.env.NEXT_PUBLIC_SC_BOOKING_URL ?? "",
+  /** Municipios served — drives JSON-LD areaServed + copy. */
+  areaServed: ["Guadalajara", "Zapopan", "Tlaquepaque", "Tonalá", "Tlajomulco"],
+  /** Price anchors (MXN) for the Precio + ROI sections. */
+  setupDesde: 18000,
+  mensualidadDesde: 2500,
+} as const;
+
+export const SC_WHATSAPP_CONFIGURED = SC.waNumber.length > 0;
+export const SC_BOOKING_CONFIGURED = SC.bookingUrl.length > 0;
+
+/**
+ * Build a wa.me deep link with a pre-filled message. Returns null when no
+ * WhatsApp number is configured so callers can render an email fallback.
+ */
+export function waLink(message: string): string | null {
+  if (!SC_WHATSAPP_CONFIGURED) return null;
+  return `https://wa.me/${SC.waNumber}?text=${encodeURIComponent(message)}`;
+}
