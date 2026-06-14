@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Agente de WhatsApp con IA — contesta, califica y te pasa el prospecto listo";
+export const alt = "Demo — mira al agente de WhatsApp contestar a las 10 de la noche";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -15,8 +15,8 @@ export default function OgImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 80px",
-          background: "#faf9f6",
-          color: "#0c0c0b",
+          background: "#0c0c0b",
+          color: "#faf9f6",
           fontFamily: "Helvetica, Arial, sans-serif",
         }}
       >
@@ -28,11 +28,11 @@ export default function OgImage() {
             fontSize: 22,
             letterSpacing: 3,
             textTransform: "uppercase",
-            color: "#5f5d57",
+            color: "#9a978e",
           }}
         >
-          <div style={{ width: 13, height: 13, borderRadius: 99, background: "#f0341a" }} />
-          Agente de WhatsApp con IA
+          <div style={{ width: 13, height: 13, borderRadius: 99, background: "#128c4b" }} />
+          Demo en vivo
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -40,18 +40,18 @@ export default function OgImage() {
             style={{
               display: "flex",
               flexWrap: "wrap",
-              fontSize: 76,
+              fontSize: 74,
               fontWeight: 800,
-              lineHeight: 1.02,
+              lineHeight: 1.03,
               letterSpacing: -3,
               maxWidth: 1040,
             }}
           >
-            <span>Tu negocio contestando WhatsApp&nbsp;</span>
-            <span style={{ color: "#f0341a" }}>las 24 horas.</span>
+            <span>Mira al agente contestar&nbsp;</span>
+            <span style={{ color: "#36d77e" }}>a las 10 de la noche.</span>
           </div>
-          <div style={{ marginTop: 30, fontSize: 27, color: "#5f5d57" }}>
-            Sitio web + asistente de WhatsApp con IA + Google Maps · Guadalajara
+          <div style={{ marginTop: 30, fontSize: 27, color: "#9a978e" }}>
+            Contesta · califica · pide fotos · te pasa el prospecto listo
           </div>
         </div>
       </div>

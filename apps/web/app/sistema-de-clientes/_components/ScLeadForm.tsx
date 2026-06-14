@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { track } from "../../../lib/analytics";
+import { useCampaign } from "../_lib/campaign";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -13,6 +14,7 @@ type Status = "idle" | "loading" | "success" | "error";
 export function ScLeadForm({ vertical }: { vertical: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
+  const source = useCampaign();
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -26,6 +28,7 @@ export function ScLeadForm({ vertical }: { vertical: string }) {
       whatsapp: String(data.get("whatsapp") ?? "").trim(),
       company: String(data.get("company") ?? ""), // honeypot
       vertical,
+      source,
     };
 
     setStatus("loading");
@@ -43,7 +46,7 @@ export function ScLeadForm({ vertical }: { vertical: string }) {
       }
       setStatus("success");
       setMessage("¡Listo! Te escribo por WhatsApp muy pronto.");
-      track("sc_lead_submit", { vertical });
+      track("sc_lead_submit", { vertical, source });
       form.reset();
     } catch (err) {
       setStatus("error");

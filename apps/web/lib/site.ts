@@ -51,10 +51,11 @@ export const LEAD_MAGNET = {
 } as const;
 
 /**
- * "Sistema de Clientes" — Spanish lead-gen subtree for local Mexican service
- * businesses (/sistema-de-clientes/*). Kept isolated from the English AI site.
- * Same graceful-degradation house style: missing env → CTAs fall back to email
- * instead of pointing at a broken link.
+ * "Agente de WhatsApp con IA" — Spanish lead-gen subtree for local Mexican
+ * service businesses (/sistema-de-clientes/*). The WhatsApp AI agent is the
+ * core product; a client website is a paid add-on. Kept isolated from the
+ * English AI site. Same graceful-degradation house style: missing env → CTAs
+ * fall back to email instead of pointing at a broken link.
  */
 export const SC = {
   /** Yovany's sales WhatsApp, digits only with country code (e.g. "5213312345678"). */
@@ -63,10 +64,16 @@ export const SC = {
   bookingUrl: process.env.NEXT_PUBLIC_SC_BOOKING_URL ?? "",
   /** Municipios served — drives JSON-LD areaServed + copy. */
   areaServed: ["Guadalajara", "Zapopan", "Tlaquepaque", "Tonalá", "Tlajomulco"],
-  /** Price anchors (MXN) for the Precio + ROI sections. */
-  setupDesde: 18000,
-  mensualidadDesde: 2500,
+  /** Agent price anchors (MXN) for the Precio + ROI sections. */
+  setupDesde: 15000,
+  mensualidadDesde: 3000,
+  /** Optional client-website add-on (MXN). */
+  sitioAddon: { setup: 4000, mensual: 400 },
+  /** Demo screen-recording for /sistema-de-clientes/demo. Empty → placeholder. */
+  demoVideo: process.env.NEXT_PUBLIC_SC_DEMO_VIDEO ?? "",
 } as const;
+
+export const SC_DEMO_CONFIGURED = SC.demoVideo.length > 0;
 
 export const SC_WHATSAPP_CONFIGURED = SC.waNumber.length > 0;
 export const SC_BOOKING_CONFIGURED = SC.bookingUrl.length > 0;

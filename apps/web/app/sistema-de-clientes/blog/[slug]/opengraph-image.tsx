@@ -1,10 +1,26 @@
 import { ImageResponse } from "next/og";
+import {
+  getArticulo,
+  publishedArticulos,
+} from "../../../../content/sistema-de-clientes/blog";
 
-export const alt = "Agente de WhatsApp con IA — contesta, califica y te pasa el prospecto listo";
+export const alt = "Artículo — Agente de WhatsApp con IA";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OgImage() {
+export function generateStaticParams() {
+  return publishedArticulos().map((a) => ({ slug: a.slug }));
+}
+
+export default async function OgImage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const a = getArticulo(slug);
+  const title = a?.title ?? "Más clientes por WhatsApp";
+
   return new ImageResponse(
     (
       <div
@@ -32,27 +48,24 @@ export default function OgImage() {
           }}
         >
           <div style={{ width: 13, height: 13, borderRadius: 99, background: "#f0341a" }} />
-          Agente de WhatsApp con IA
+          Agente de WhatsApp con IA · Blog
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              fontSize: 76,
-              fontWeight: 800,
-              lineHeight: 1.02,
-              letterSpacing: -3,
-              maxWidth: 1040,
-            }}
-          >
-            <span>Tu negocio contestando WhatsApp&nbsp;</span>
-            <span style={{ color: "#f0341a" }}>las 24 horas.</span>
-          </div>
-          <div style={{ marginTop: 30, fontSize: 27, color: "#5f5d57" }}>
-            Sitio web + asistente de WhatsApp con IA + Google Maps · Guadalajara
-          </div>
+        <div
+          style={{
+            display: "flex",
+            fontSize: title.length > 70 ? 52 : 62,
+            fontWeight: 800,
+            lineHeight: 1.05,
+            letterSpacing: -2,
+            maxWidth: 1040,
+          }}
+        >
+          {title}
+        </div>
+
+        <div style={{ display: "flex", fontSize: 26, color: "#5f5d57" }}>
+          yovany.dev · Guadalajara
         </div>
       </div>
     ),

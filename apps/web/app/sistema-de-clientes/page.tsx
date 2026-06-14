@@ -4,9 +4,9 @@ import { SistemaTemplate } from "./_components/SistemaTemplate";
 import { ServiceJsonLd } from "./_components/ServiceJsonLd";
 
 const TITLE =
-  "Sistema de Clientes para negocios de servicios en Guadalajara";
+  "Agente de WhatsApp con IA para negocios de servicios en Guadalajara";
 const DESCRIPTION =
-  "Sitio web profesional + asistente de WhatsApp con inteligencia artificial + Google Maps optimizado. El sistema completo para que los clientes te encuentren, te escriban y ninguno se quede sin respuesta.";
+  "Un agente de inteligencia artificial que contesta tu WhatsApp 24/7, califica al cliente, pide fotos y medidas, y te pasa el prospecto listo para cotizar. Sitio web opcional como add-on.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     locale: "es_MX",
   },
   keywords: [
-    "sistema de clientes Guadalajara",
-    "página web para negocios de servicios",
-    "asistente de WhatsApp con IA",
-    "Google Maps para negocios locales",
-    "chatbot WhatsApp México",
+    "agente de WhatsApp con IA Guadalajara",
+    "chatbot de WhatsApp para negocios",
+    "automatizar WhatsApp negocio México",
+    "asistente de WhatsApp inteligencia artificial",
+    "cotizar por WhatsApp automático",
   ],
 };
 

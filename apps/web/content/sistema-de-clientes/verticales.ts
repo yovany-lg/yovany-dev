@@ -12,6 +12,12 @@
 
 export type Turno = { rol: "cliente" | "agente"; texto: string };
 
+/** Resumen estructurado que el agente le entrega al dueño — el diferenciador. */
+export type Resumen = {
+  servicio: string;
+  lineas: { label: string; value: string }[];
+};
+
 export type Vertical = {
   /** Segmento de URL: /sistema-de-clientes/<slug> */
   slug: string;
@@ -25,6 +31,8 @@ export type Vertical = {
   dolores: [string, string, string];
   /** Conversación de ejemplo real del asistente para este giro. */
   conversacion: Turno[];
+  /** Resumen que recibe el dueño; si falta, se usa uno genérico. */
+  resumen?: Resumen;
   /** Rango de ticket del trabajo (MXN) — alimenta la sección de ROI. */
   ticket: { min: number; max: number };
   /** Cierre de la sección ROI, propio del giro. */
@@ -44,8 +52,8 @@ export const VERTICALES: Vertical[] = [
     tier: 1,
     giro: "paneles solares",
     hero: {
-      h1: "Tu empresa de paneles solares contestando WhatsApp 24/7. Aunque andes en un techo.",
-      sub: "Sitio web profesional + asistente de WhatsApp con inteligencia artificial + Google Maps optimizado. Mientras tú instalas, tu asistente contesta, pide el recibo de CFE y te entrega el cliente ya calificado.",
+      h1: "Tu empresa de paneles solares contestando WhatsApp al instante. Aunque andes en un techo.",
+      sub: "Un agente de inteligencia artificial que contesta por ti mientras estás en una instalación, pide el recibo de CFE, pre-dimensiona el sistema y te entrega el cliente ya calificado. ¿Quieres sitio web? Va como add-on.",
     },
     dolores: [
       "Mientras estás en una instalación entran mensajes que no alcanzas a contestar — y el cliente se va con otro instalador.",
@@ -60,6 +68,18 @@ export const VERTICALES: Vertical[] = [
       { rol: "cliente", texto: "Sí, es propia, en Zapopan." },
       { rol: "agente", texto: "Perfecto, ya tengo lo necesario. Un asesor te manda hoy mismo la propuesta con tu ahorro estimado." },
     ],
+    resumen: {
+      servicio: "Cotización de paneles solares (residencial)",
+      lineas: [
+        { label: "Nombre", value: "Laura Méndez" },
+        { label: "Consumo", value: "Bimestral, tarifa DAC" },
+        { label: "Inmueble", value: "Casa propia" },
+        { label: "Zona", value: "Zapopan" },
+        { label: "Recibo CFE", value: "1 foto adjunta" },
+        { label: "WhatsApp", value: "33 1234 5678" },
+        { label: "Recibido", value: "9:15 pm" },
+      ],
+    },
     ticket: { min: 23000, max: 120000 },
     roiNota: "Una sola instalación paga el sistema de todo el año — y te sobra.",
     faqs: [
@@ -73,16 +93,16 @@ export const VERTICALES: Vertical[] = [
       },
     ],
     waMensaje:
-      "Hola Yovany, tengo una empresa de paneles solares y quiero saber más del Sistema de Clientes.",
+      "Hola Yovany, tengo una empresa de paneles solares y quiero saber más del agente de WhatsApp.",
     seo: {
-      title: "Sistema de Clientes para empresas de paneles solares en Guadalajara",
+      title: "Agente de WhatsApp con IA para empresas de paneles solares en Guadalajara",
       description:
-        "Sitio web + asistente de WhatsApp con IA + Google Maps para instaladores de paneles solares en Guadalajara. Contesta 24/7, califica con el recibo de CFE y no pierdas ni un cliente.",
+        "Un agente de WhatsApp que contesta 24/7, pide el recibo de CFE, pre-dimensiona el sistema y te entrega el cliente ya calificado. Para instaladores de paneles solares en Guadalajara.",
       keywords: [
-        "sistema de clientes paneles solares Guadalajara",
-        "página web instaladores de paneles solares",
-        "WhatsApp automático energía solar GDL",
-        "marketing para empresas de paneles solares",
+        "agente de WhatsApp paneles solares Guadalajara",
+        "chatbot WhatsApp energía solar GDL",
+        "cotizar paneles solares por WhatsApp",
+        "automatizar WhatsApp instaladores solares",
       ],
     },
   },
@@ -90,47 +110,68 @@ export const VERTICALES: Vertical[] = [
     slug: "impermeabilizacion",
     published: true,
     tier: 2,
-    giro: "impermeabilización",
+    giro: "impermeabilización y pintura",
     hero: {
-      h1: "Tu negocio de impermeabilización contestando WhatsApp 24/7. Aunque esté lloviendo.",
-      sub: "Sitio web profesional + asistente de WhatsApp con inteligencia artificial + Google Maps optimizado. Cuando llega el temporal y se te juntan los mensajes, tu asistente contesta a todos y te pasa los clientes listos para cotizar.",
+      h1: "Tu negocio de impermeabilización y pintura contestando WhatsApp al instante. Aunque sean las 10 de la noche.",
+      sub: "Un agente de inteligencia artificial que contesta por ti en plena temporada de lluvias, califica al cliente, pide fotos del área y te pasa el prospecto listo para cotizar. ¿Quieres sitio web? Va como add-on.",
     },
     dolores: [
-      "Llega el temporal de lluvias y te saturas de mensajes: contestas a unos cuantos y el resto se va con quien sí responde.",
-      "El cliente con gotera quiere solución HOY. El primero que contesta es el que cierra el trabajo.",
-      "No apareces en Google Maps cuando alguien busca “impermeabilización” en tu colonia.",
+      "Llega el temporal y se te juntan los “se me está metiendo agua” que no alcanzas a contestar — y se van con quien sí responde.",
+      "Una filtración no espera a horario de oficina: el que contesta a las 10 de la noche un domingo se lleva el trabajo.",
+      "En tus reseñas la gente pide “un número para cotizar” y nadie contesta: demanda que se te escapa.",
     ],
     conversacion: [
-      { rol: "cliente", texto: "Hola, tengo una gotera, ¿cuánto cobran?" },
-      { rol: "agente", texto: "¡Te ayudo de inmediato! Para darte un estimado, ¿cuántos metros cuadrados son aprox. y de qué es la azotea (concreto, lámina)?" },
-      { rol: "cliente", texto: "Como 80 metros, de concreto." },
-      { rol: "agente", texto: "Perfecto. ¿Me mandas una foto de la zona afectada y tu colonia? Con eso te paso un rango de precio." },
-      { rol: "cliente", texto: "[envía foto] Estoy en Tlaquepaque." },
-      { rol: "agente", texto: "Listo, ya tengo todo. Un asesor te confirma el precio y agenda la visita hoy mismo." },
+      { rol: "cliente", texto: "Buenas, ¿hacen impermeabilización de azotea? Se me está metiendo agua." },
+      { rol: "agente", texto: "¡Hola! 👋 Gracias por escribir. Soy el asistente y le ayudo a cotizar rapidito. ¿Busca impermeabilización, pintura, o las dos?" },
+      { rol: "cliente", texto: "Impermeabilización." },
+      { rol: "agente", texto: "¿Tiene filtraciones ahorita o es más preventivo? ¿Y cuántos metros cuadrados son, más o menos?" },
+      { rol: "cliente", texto: "Filtración activa, como 80 metros, casa de un piso." },
+      { rol: "agente", texto: "Entendido. ¿Me manda 1 o 2 fotos del área? 📷 Con eso le damos un precio mucho más exacto. ¿En qué colonia está?" },
+      { rol: "cliente", texto: "[envía fotos] En Providencia." },
+      { rol: "agente", texto: "¿Para cuándo lo necesita, urgente o cotizando con calma? ¿Y a nombre de quién preparo la cotización?" },
+      { rol: "cliente", texto: "Urgente, me entra agua. Juan Pérez." },
+      { rol: "agente", texto: "¡Listo, Juan! Ya tengo todo. El equipo le manda su cotización hoy mismo; con sus fotos le dan un número bien preciso. 🙌" },
     ],
-    ticket: { min: 8000, max: 60000 },
-    roiNota: "Con los leads de una sola temporada de lluvias recuperas el sistema del año.",
+    resumen: {
+      servicio: "Impermeabilizar azotea (filtración activa)",
+      lineas: [
+        { label: "Nombre", value: "Juan Pérez" },
+        { label: "Superficie", value: "~80 m² (casa 1 piso)" },
+        { label: "Zona", value: "Col. Providencia" },
+        { label: "Urgencia", value: "Esta semana (le entra agua)" },
+        { label: "Fotos", value: "2 adjuntas" },
+        { label: "WhatsApp", value: "33 1234 5678" },
+        { label: "Recibido", value: "10:42 pm" },
+      ],
+    },
+    ticket: { min: 4000, max: 50000 },
+    roiNota: "Recuperar un solo cliente perdido en temporada de lluvias ya paga el sistema.",
     faqs: [
       {
-        q: "Vendo más en temporada de lluvias, ¿me sirve todo el año?",
-        a: "Sí. En temporada evita que pierdas la avalancha de clientes que no alcanzas a contestar; el resto del año mantiene tu presencia en Google y capta trabajos de mantenimiento.",
+        q: "¿El agente atiende impermeabilización y pintura?",
+        a: "Sí. Maneja las dos ramas y, si el cliente pide ambas, junta todo en un solo resumen para que cotices de una vez.",
       },
       {
-        q: "¿Puede pedir fotos de la azotea?",
-        a: "Sí. El asistente pide metros, tipo de superficie y fotos de la zona afectada, así te llega el lead casi cotizado.",
+        q: "¿De verdad pide fotos del área?",
+        a: "Sí, siempre. Es el diferenciador: con una foto de la azotea o los muros cotizas casi sin ir a la visita.",
+      },
+      {
+        q: "¿Le da precios al cliente?",
+        a: "Tú decides. Por default junta medidas y fotos y tú cotizas (lo más justo). Si prefieres, configuramos un rango orientativo por m² y el agente lo comparte mientras sigue calificando.",
       },
     ],
     waMensaje:
-      "Hola Yovany, tengo un negocio de impermeabilización y quiero saber más del Sistema de Clientes.",
+      "Hola Yovany, tengo un negocio de impermeabilización y pintura y quiero saber más del agente de WhatsApp.",
     seo: {
-      title: "Sistema de Clientes para negocios de impermeabilización en Guadalajara",
+      title: "Agente de WhatsApp con IA para impermeabilización y pintura en Guadalajara",
       description:
-        "Sitio web + asistente de WhatsApp con IA + Google Maps para impermeabilizadores en Guadalajara. Contesta 24/7 en plena temporada de lluvias y no pierdas ni un cliente con gotera.",
+        "Un agente de WhatsApp que contesta 24/7 en temporada de lluvias, califica al cliente, pide fotos del área y te entrega el prospecto listo para cotizar. Para impermeabilizadores y pintores en Guadalajara.",
       keywords: [
-        "sistema de clientes impermeabilización Guadalajara",
-        "página web impermeabilización GDL",
-        "WhatsApp automático impermeabilizantes",
-        "leads de impermeabilización Guadalajara",
+        "agente de WhatsApp impermeabilización Guadalajara",
+        "chatbot WhatsApp pintura GDL",
+        "cotizar impermeabilización por WhatsApp",
+        "WhatsApp automático impermeabilizantes Guadalajara",
+        "agente IA para pintores Guadalajara",
       ],
     },
   },
@@ -140,8 +181,8 @@ export const VERTICALES: Vertical[] = [
     tier: 2,
     giro: "portones eléctricos y canceles",
     hero: {
-      h1: "Tu negocio de portones y canceles contestando WhatsApp 24/7. Aunque estés en una instalación.",
-      sub: "Sitio web profesional + asistente de WhatsApp con inteligencia artificial + Google Maps optimizado. Tu asistente junta medidas y fotos, califica al cliente y te lo entrega listo para cotizar.",
+      h1: "Tu negocio de portones y canceles contestando WhatsApp al instante. Aunque estés en una instalación.",
+      sub: "Un agente de inteligencia artificial que contesta por ti, junta medidas y fotos, califica al cliente y te lo entrega listo para cotizar. ¿Quieres sitio web? Va como add-on.",
     },
     dolores: [
       "Te escriben para cotizar un portón o cancel y, si no contestas rápido, le piden a tres más y se van con el primero.",
@@ -156,6 +197,18 @@ export const VERTICALES: Vertical[] = [
       { rol: "cliente", texto: "[envía foto] En Tonalá." },
       { rol: "agente", texto: "Listo. Un asesor te confirma precio y disponibilidad hoy mismo." },
     ],
+    resumen: {
+      servicio: "Portón eléctrico corredizo (4 m)",
+      lineas: [
+        { label: "Nombre", value: "Carlos Ruiz" },
+        { label: "Producto", value: "Portón corredizo" },
+        { label: "Medida", value: "~4 m de ancho" },
+        { label: "Zona", value: "Tonalá" },
+        { label: "Fotos", value: "1 adjunta" },
+        { label: "WhatsApp", value: "33 1234 5678" },
+        { label: "Recibido", value: "8:30 pm" },
+      ],
+    },
     ticket: { min: 20000, max: 80000 },
     roiNota: "Un par de portones al año pagan el sistema completo.",
     faqs: [
@@ -169,16 +222,16 @@ export const VERTICALES: Vertical[] = [
       },
     ],
     waMensaje:
-      "Hola Yovany, tengo un negocio de portones y canceles y quiero saber más del Sistema de Clientes.",
+      "Hola Yovany, tengo un negocio de portones y canceles y quiero saber más del agente de WhatsApp.",
     seo: {
-      title: "Sistema de Clientes para negocios de portones y canceles en Guadalajara",
+      title: "Agente de WhatsApp con IA para negocios de portones y canceles en Guadalajara",
       description:
-        "Sitio web + asistente de WhatsApp con IA + Google Maps para negocios de portones eléctricos, canceles y aluminio en Guadalajara. Contesta 24/7 y no pierdas ni una cotización.",
+        "Un agente de WhatsApp que contesta 24/7, junta medidas y fotos, y te entrega el cliente listo para cotizar. Para negocios de portones eléctricos, canceles y aluminio en Guadalajara.",
       keywords: [
-        "sistema de clientes portones eléctricos Guadalajara",
-        "página web canceles de aluminio GDL",
-        "WhatsApp automático portones",
-        "leads de herrería Guadalajara",
+        "agente de WhatsApp portones eléctricos Guadalajara",
+        "chatbot WhatsApp canceles de aluminio GDL",
+        "cotizar portones por WhatsApp",
+        "automatizar WhatsApp herrería Guadalajara",
       ],
     },
   },
@@ -186,12 +239,12 @@ export const VERTICALES: Vertical[] = [
   // ───────────────── DEFINIDOS, AÚN SIN PUBLICAR (Tier 1/2) ─────────────────
   {
     slug: "clinicas-dentales",
-    published: false,
+    published: true,
     tier: 1,
     giro: "clínica dental",
     hero: {
-      h1: "Tu clínica dental con la agenda llena y WhatsApp contestado 24/7.",
-      sub: "Sitio web profesional + asistente de WhatsApp con inteligencia artificial + Google Maps optimizado. Tu asistente califica el tratamiento, agenda la valoración y responde en español e inglés.",
+      h1: "Tu clínica dental con la agenda llena y WhatsApp contestado al instante, 24/7.",
+      sub: "Un agente de inteligencia artificial que califica el tratamiento, agenda la valoración y responde en español e inglés — sin que tu recepción viva pegada al teléfono. ¿Quieres sitio web? Va como add-on.",
     },
     dolores: [
       "Los pacientes preguntan por WhatsApp a cualquier hora y, si no contestas, agendan en otra clínica.",
@@ -204,6 +257,17 @@ export const VERTICALES: Vertical[] = [
       { rol: "cliente", texto: "Just one implant for now." },
       { rol: "agente", texto: "Perfect. I can book you a free valuation. What dates work for you this week?" },
     ],
+    resumen: {
+      servicio: "Valoración — implante dental (1 pieza)",
+      lineas: [
+        { label: "Nombre", value: "Sarah Johnson" },
+        { label: "Tratamiento", value: "Implante (1 pieza)" },
+        { label: "Idioma", value: "Inglés (paciente de EE. UU.)" },
+        { label: "Agenda", value: "Valoración esta semana" },
+        { label: "WhatsApp", value: "+1 555 123 4567" },
+        { label: "Recibido", value: "11:05 pm" },
+      ],
+    },
     ticket: { min: 24000, max: 600000 },
     roiNota: "Un solo tratamiento de implantes paga el sistema de todo el año.",
     faqs: [
@@ -213,16 +277,16 @@ export const VERTICALES: Vertical[] = [
       },
     ],
     waMensaje:
-      "Hola Yovany, tengo una clínica dental y quiero saber más del Sistema de Clientes.",
+      "Hola Yovany, tengo una clínica dental y quiero saber más del agente de WhatsApp.",
     seo: {
-      title: "Sistema de Clientes para clínicas dentales en Guadalajara",
+      title: "Agente de WhatsApp con IA para clínicas dentales en Guadalajara",
       description:
-        "Sitio web + asistente de WhatsApp con IA + Google Maps para clínicas dentales. Califica tratamientos, agenda valoraciones y responde en español e inglés 24/7.",
+        "Un agente de WhatsApp que califica el tratamiento, agenda valoraciones y responde en español e inglés 24/7. Para clínicas dentales en Guadalajara y turismo dental.",
       keywords: [
-        "sistema de clientes clínica dental Guadalajara",
-        "página web dentista GDL",
-        "WhatsApp automático clínica dental",
-        "turismo dental Guadalajara",
+        "agente de WhatsApp clínica dental Guadalajara",
+        "chatbot WhatsApp dentista GDL",
+        "agendar citas dentales por WhatsApp",
+        "turismo dental Guadalajara WhatsApp",
       ],
     },
   },

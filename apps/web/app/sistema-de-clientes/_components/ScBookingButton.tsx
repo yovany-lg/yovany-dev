@@ -2,6 +2,7 @@
 
 import { track } from "../../../lib/analytics";
 import { SC, SC_BOOKING_CONFIGURED, SITE } from "../../../lib/site";
+import { useCampaign } from "../_lib/campaign";
 
 /**
  * Secondary CTA: book the 15-min "Diagnóstico" call. Links to the Cal.com
@@ -17,6 +18,7 @@ export function ScBookingButton({
   label?: string;
   className?: string;
 }) {
+  const source = useCampaign();
   const href = SC_BOOKING_CONFIGURED
     ? SC.bookingUrl
     : `mailto:${SITE.email}?subject=${encodeURIComponent(
@@ -30,7 +32,7 @@ export function ScBookingButton({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => track("sc_cal_booking_click", { vertical })}
+      onClick={() => track("sc_cal_booking_click", { vertical, source })}
       className={`btn btn-ghost ${className}`}
       data-cta="sc-booking"
     >

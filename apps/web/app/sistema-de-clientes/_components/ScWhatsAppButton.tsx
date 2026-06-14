@@ -2,6 +2,7 @@
 
 import { track } from "../../../lib/analytics";
 import { SITE, waLink } from "../../../lib/site";
+import { useCampaign, withSource } from "../_lib/campaign";
 
 /**
  * Primary CTA for the Sistema de Clientes funnel. Opens WhatsApp with a
@@ -24,11 +25,13 @@ export function ScWhatsAppButton({
   size?: "sm";
   className?: string;
 }) {
+  const source = useCampaign();
+  const msg = withSource(message, source);
   const href =
-    waLink(message) ??
+    waLink(msg) ??
     `mailto:${SITE.email}?subject=${encodeURIComponent(
-      "Sistema de Clientes",
-    )}&body=${encodeURIComponent(message)}`;
+      "Agente de WhatsApp con IA",
+    )}&body=${encodeURIComponent(msg)}`;
 
   const cls = `btn btn-${variant} ${size === "sm" ? "btn-sm" : ""} ${className}`;
 
@@ -37,7 +40,7 @@ export function ScWhatsAppButton({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => track("sc_whatsapp_click", { vertical })}
+      onClick={() => track("sc_whatsapp_click", { vertical, source })}
       className={cls}
       data-cta="sc-whatsapp"
     >

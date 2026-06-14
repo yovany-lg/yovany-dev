@@ -9,8 +9,8 @@ const peso = (n: number) =>
 
 /**
  * "La cuenta sale sola" — simple, backend-free ROI calculator.
- * Input: average job ticket. Output: how many jobs/year pay back the system
- * (setup + 12 months). Defaults to the vertical's low-end ticket.
+ * Input: average job ticket. Output: how many months of the agent a single
+ * recovered job pays for. Defaults to the vertical's low-end ticket.
  */
 export function ScRoiCalc({
   defaultTicket,
@@ -23,11 +23,11 @@ export function ScRoiCalc({
   const [ticket, setTicket] = useState(defaultTicket);
   const [touched, setTouched] = useState(false);
 
-  const annualCost = SC.setupDesde + SC.mensualidadDesde * 12;
-  const trabajos = useMemo(() => {
+  const mensual = SC.mensualidadDesde;
+  const meses = useMemo(() => {
     if (!ticket || ticket <= 0) return null;
-    return Math.max(1, Math.ceil(annualCost / ticket));
-  }, [ticket, annualCost]);
+    return Math.max(1, Math.floor(ticket / mensual));
+  }, [ticket, mensual]);
 
   function onChange(value: string) {
     const n = Number(value.replace(/[^\d]/g, ""));
@@ -53,27 +53,27 @@ export function ScRoiCalc({
             onChange={(e) => onChange(e.target.value)}
             className="sc-roi-input"
             aria-label="Ticket promedio en pesos"
-            placeholder="20,000"
+            placeholder="15,000"
           />
           <span className="sc-roi-mxn">MXN</span>
         </div>
       </div>
 
       <div className="sc-roi-out" role="status" aria-live="polite">
-        {trabajos === null ? (
+        {meses === null ? (
           <p className="sc-roi-hint">Escribe tu ticket promedio para ver la cuenta.</p>
-        ) : trabajos <= 1 ? (
-          <p className="sc-roi-result">
-            <strong>Un solo trabajo</strong> paga el sistema de todo el año.
-          </p>
         ) : (
           <p className="sc-roi-result">
-            Te bastan <strong>{trabajos} trabajos</strong> en el año para recuperar
-            la inversión completa del sistema.
+            Un solo trabajo de ${peso(ticket)} paga{" "}
+            <strong>
+              {meses} {meses === 1 ? "mes" : "meses"}
+            </strong>{" "}
+            del agente. Recuperar un cliente perdido ya lo pagó.
           </p>
         )}
         <p className="sc-roi-base">
-          Inversión del primer año: ${peso(annualCost)} MXN (instalación + 12 meses).
+          El agente cuesta ${peso(mensual)}/mes · instalación desde $
+          {peso(SC.setupDesde)} (una sola vez).
         </p>
       </div>
     </div>

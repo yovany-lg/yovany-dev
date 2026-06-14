@@ -7,6 +7,7 @@ import { ScRoiCalc } from "./ScRoiCalc";
 import { ScFaq } from "./ScFaq";
 import { ScLeadForm } from "./ScLeadForm";
 import { StickyWhatsApp } from "./StickyWhatsApp";
+import { ResumenCard } from "./ResumenCard";
 
 /**
  * Shared presentational template for the Sistema de Clientes hub and every
@@ -14,8 +15,17 @@ import { StickyWhatsApp } from "./StickyWhatsApp";
  * only. Server Component — the 3 interactive islands are imported clients.
  */
 export function SistemaTemplate({ content }: { content: SistemaContent }) {
-  const { giroKey, hero, dolores, conversacion, ticket, roiNota, faqs, waMensaje } =
-    content;
+  const {
+    giroKey,
+    hero,
+    dolores,
+    conversacion,
+    resumen,
+    ticket,
+    roiNota,
+    faqs,
+    waMensaje,
+  } = content;
   const zonas = SC.areaServed.join(" · ");
 
   return (
@@ -62,7 +72,7 @@ export function SistemaTemplate({ content }: { content: SistemaContent }) {
         <div className="container-x">
           <Reveal>
             <p className="kicker">Cómo funciona</p>
-            <h2 className="sc-h2">De una búsqueda en Google a un cliente en tu WhatsApp.</h2>
+            <h2 className="sc-h2">De un mensaje de WhatsApp a un cliente listo para cotizar.</h2>
           </Reveal>
           <div className="sc-steps">
             {SC_SHARED.pasos.map((p, i) => (
@@ -75,7 +85,7 @@ export function SistemaTemplate({ content }: { content: SistemaContent }) {
           </div>
 
           <Reveal className="sc-chat">
-            <p className="sc-chat-label">Así contesta tu asistente</p>
+            <p className="sc-chat-label">Así contesta tu agente</p>
             <div className="sc-chat-thread">
               {conversacion.map((t, i) => (
                 <div
@@ -90,18 +100,37 @@ export function SistemaTemplate({ content }: { content: SistemaContent }) {
         </div>
       </section>
 
+      {/* 3b ─ Lo que te llega a ti (el oro) */}
+      <section className="section rule-top">
+        <div className="container-x sc-resumen-wrap">
+          <Reveal>
+            <p className="kicker">Lo que te llega a ti</p>
+            <h2 className="sc-h2">
+              Despiertas con el prospecto listo, no con un “hola, info?”.
+            </h2>
+            <p className="sc-lead-copy">
+              En cuanto el agente termina de calificar, te manda esto a tu WhatsApp —
+              ordenado y listo para cotizar:
+            </p>
+          </Reveal>
+          <Reveal as="div" delay={80}>
+            <ResumenCard resumen={resumen} />
+          </Reveal>
+        </div>
+      </section>
+
       {/* 4 ─ Qué incluye */}
       <section className="section rule-top">
         <div className="container-x">
           <Reveal>
             <p className="kicker">Qué incluye</p>
-            <h2 className="sc-h2">El sistema completo, integrado y listo para trabajar.</h2>
+            <h2 className="sc-h2">Tu agente trabaja mientras tú trabajas.</h2>
           </Reveal>
           <div className="sc-incluye">
             <Reveal as="div" className="sc-incluye-col card">
-              <h3 className="sc-incluye-title">La instalación (una vez)</h3>
+              <h3 className="sc-incluye-title">Lo que hace tu agente</h3>
               <ul className="sc-list">
-                {SC_SHARED.incluye.setup.map((x) => (
+                {SC_SHARED.incluye.agente.map((x) => (
                   <li key={x}>{x}</li>
                 ))}
               </ul>
@@ -160,6 +189,7 @@ export function SistemaTemplate({ content }: { content: SistemaContent }) {
             <p className="kicker">Precio</p>
             <h2 className="sc-precio-line">{SC_SHARED.precio.linea}</h2>
             <p className="sc-precio-nota">{SC_SHARED.precio.nota}</p>
+            <p className="sc-precio-addon">{SC_SHARED.precio.addon}</p>
             <p className="sc-precio-comp">{SC_SHARED.precio.comparativa}</p>
             <div className="sc-precio-cta">
               <ScWhatsAppButton

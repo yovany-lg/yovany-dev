@@ -3,65 +3,71 @@
  * páginas del subárbol, y los adaptadores que convierten (hub | vertical) en
  * el mismo `SistemaContent` que renderiza <SistemaTemplate>.
  *
+ * Producto rector: el AGENTE de WhatsApp con IA. El sitio web es un add-on.
  * Español mexicano, tono directo, frases cortas. Vender resultados, no
  * características. Prohibido: "RAG", "pipeline", "API", "stack".
  */
 
-import type { Turno, Vertical } from "./verticales";
+import type { Resumen, Turno, Vertical } from "./verticales";
 import { SC } from "../../lib/site";
+
+const peso = (n: number) => n.toLocaleString("es-MX", { maximumFractionDigits: 0 });
 
 /** Bloques idénticos en hub y en todos los verticales. */
 export const SC_SHARED = {
   pasos: [
     {
-      titulo: "Te encuentran en Google",
+      titulo: "El cliente te escribe por WhatsApp",
       texto:
-        "Tu negocio aparece en Google Maps y en las búsquedas cuando alguien necesita tu servicio en tu zona.",
+        "A cualquier hora — un domingo a las 10 de la noche con una filtración, o a media instalación cuando no puedes contestar.",
     },
     {
-      titulo: "El asistente atiende y califica",
+      titulo: "El agente atiende, califica y pide fotos",
       texto:
-        "Tu asistente de WhatsApp contesta en segundos, de día o de noche, hace las preguntas correctas y arma el resumen del cliente.",
+        "Contesta en segundos, hace las preguntas correctas una por una, junta fotos y medidas, y detecta si es urgente.",
     },
     {
-      titulo: "Tú solo cotizas",
+      titulo: "Te llega el prospecto listo para cotizar",
       texto:
-        "Te llega el cliente listo, con todo lo que necesitas para cotizar. Cero clientes perdidos por no contestar a tiempo.",
+        "Un resumen ordenado a tu WhatsApp: servicio, medidas, zona, urgencia, fotos y contacto. Tú solo pasas el precio.",
     },
   ],
   incluye: {
-    setup: [
-      "Sitio web profesional, rápido y hecho para celular, con tu dominio propio.",
-      "Asistente de WhatsApp con inteligencia artificial que contesta 24/7 y califica a cada cliente.",
-      "Tu perfil de Google Maps optimizado para que aparezcas cuando te buscan.",
-      "Botón de WhatsApp en todo el sitio para que te escriban con un clic.",
-      "Galería de trabajos y tu zona de cobertura, clave para que Google te muestre.",
+    // Columna 1 — el agente, el corazón del producto.
+    agente: [
+      "Contesta tu WhatsApp al instante, 24/7, los 365 días.",
+      "Califica al cliente con las preguntas correctas de tu giro, una a la vez.",
+      "Pide fotos y medidas del trabajo — para que cotices casi sin visita.",
+      "Te arma un resumen ordenado del prospecto, listo para cotizar.",
+      "Escala a un humano (a ti) cuando el caso es raro o el cliente lo pide.",
     ],
+    // Columna 2 — la mensualidad.
     mensualidad: [
-      "Hosting, dominio y mantenimiento del sitio.",
-      "Operación y ajustes del asistente: precios, servicios y horarios.",
-      "Publicaciones mensuales en tu perfil de Google.",
-      "Reporte mensual: cuántos clientes te escribieron y qué pidieron.",
+      "Operación y ajustes del agente: servicios, preguntas, horarios.",
+      "Servidor, WhatsApp Business y la inteligencia artificial corriendo.",
+      "Reporte mensual: cuántos clientes escribieron y qué pidieron.",
       "Soporte por WhatsApp directo conmigo.",
     ],
+    // Add-ons — el sitio web ahora vive aquí.
     addons: [
+      `Sitio web sencillo: botón de WhatsApp + galería de trabajos (+$${peso(SC.sitioAddon.setup)} + $${peso(SC.sitioAddon.mensual)}/mes)`,
+      "Perfil de Google Maps optimizado",
+      "Cotizador automático con rangos de precio",
       "Motor de reseñas de Google automatizado",
       "Campañas de reactivación a clientes pasados",
-      "Cotizador automático con rangos de precio",
-      "Google Ads local administrado",
-      "Mini panel de clientes (CRM)",
     ],
   },
   porQue: {
     heading: "¿Por qué conmigo?",
-    body: "Soy ingeniero de software con más de 8 años construyendo sistemas que funcionan solos. No soy una agencia que subcontrata: el sistema lo construyo yo y lo mantengo yo. Hablas directo con quien lo hace.",
+    body: "Soy ingeniero de software con más de 8 años construyendo sistemas de inteligencia artificial que funcionan solos. No soy una agencia que subcontrata: el agente lo construyo yo y lo opero yo. Hablas directo con quien lo hace.",
   },
   precio: {
     titulo: "Precio claro, sin letras chiquitas",
-    linea: `Desde $${SC.setupDesde.toLocaleString("es-MX")} MXN de instalación + desde $${SC.mensualidadDesde.toLocaleString("es-MX")} al mes.`,
+    linea: `Desde $${peso(SC.setupDesde)} MXN de instalación + $${peso(SC.mensualidadDesde)} al mes.`,
     nota: "Sin contratos forzosos. Mes a mes.",
+    addon: `¿Quieres también sitio web? Es un add-on: +$${peso(SC.sitioAddon.setup)} de instalación + $${peso(SC.sitioAddon.mensual)}/mes. Muchos clientes empiezan solo con el agente.`,
     comparativa:
-      "Solo el chatbot cuesta entre $15,000 y $28,000 más mensualidad en otro lado. Aquí va todo integrado: sitio, asistente y Google.",
+      "Recuperar UN cliente perdido al mes ya pagó el sistema. El agente es el activo; el sitio web es opcional.",
   },
   /** FAQ base — se les suman las FAQ del vertical. */
   faqsBase: [
@@ -70,20 +76,20 @@ export const SC_SHARED = {
       a: "No necesariamente. Podemos usar tu número actual o migrar a uno nuevo de WhatsApp Business. Lo definimos según lo que más te convenga.",
     },
     {
-      q: "¿El asistente reemplaza a una persona?",
-      a: "No. Contesta al instante, califica al cliente y te pasa el resumen. Cuando el caso lo amerita o el cliente lo pide, escala a un humano: a ti o a tu equipo.",
+      q: "¿El agente reemplaza a una persona?",
+      a: "No. Contesta al instante, califica al cliente y te pasa el resumen listo. Cuando el caso lo amerita o el cliente lo pide, escala a un humano: a ti o a tu equipo.",
+    },
+    {
+      q: "¿El sitio web está incluido?",
+      a: `El producto es el agente de WhatsApp. El sitio web es un add-on opcional (+$${peso(SC.sitioAddon.setup)} de instalación + $${peso(SC.sitioAddon.mensual)}/mes): una landing con botón de WhatsApp y galería de trabajos. Muchos clientes arrancan solo con el agente.`,
     },
     {
       q: "¿En cuánto tiempo está listo?",
-      a: "Entre 2 y 3 semanas, dependiendo de tu giro y de qué tan rápido me pases la información de tu negocio.",
-    },
-    {
-      q: "¿Qué pasa si cancelo?",
-      a: "El dominio y tu perfil de Google son tuyos, te quedas con ellos. No hay contratos forzosos: es mes a mes.",
+      a: "El agente queda en 1 o 2 semanas, dependiendo de qué tan rápido me pases la información de tu negocio.",
     },
     {
       q: "¿Funciona para mi giro?",
-      a: "Funciona para negocios de servicios de ticket alto: paneles solares, remodelaciones, clínicas, despachos, impermeabilización y más. Si tu cliente te busca en Google y te escribe por WhatsApp, te sirve.",
+      a: "Funciona para negocios de servicios donde el cliente te escribe por WhatsApp y tú cotizas: impermeabilización, pintura, remodelaciones, instalaciones y más. Si pierdes clientes por no contestar a tiempo, te sirve.",
     },
   ],
 } as const;
@@ -98,35 +104,52 @@ export type SistemaContent = {
   hero: { kicker: string; h1: string; sub: string };
   dolores: string[];
   conversacion: Turno[];
+  /** El resumen que le llega al dueño (el "oro"). */
+  resumen: Resumen;
+  /** Rango de ticket del trabajo (MXN) — alimenta el ROI. */
   ticket: { min: number; max: number };
   roiNota: string;
   faqs: { q: string; a: string }[];
   waMensaje: string;
 };
 
+/** Resumen genérico para el hub (sin giro específico). */
+const RESUMEN_HUB: Resumen = {
+  servicio: "Cotización de servicio",
+  lineas: [
+    { label: "Nombre", value: "Juan Pérez" },
+    { label: "Servicio", value: "Lo que ofreces (con detalle)" },
+    { label: "Zona", value: "Col. Providencia" },
+    { label: "Urgencia", value: "Esta semana" },
+    { label: "Fotos", value: "2 adjuntas" },
+    { label: "WhatsApp", value: "33 1234 5678" },
+    { label: "Recibido", value: "10:42 pm" },
+  ],
+};
+
 /** Copy propio del hub (genérico, sin giro). */
 const HUB = {
   hero: {
-    kicker: "Sistema de Clientes",
-    h1: "Tu negocio contestando WhatsApp las 24 horas. Aunque tú estés trabajando.",
-    sub: "Sitio web profesional + asistente de WhatsApp con inteligencia artificial + Google Maps optimizado. El sistema completo para que los clientes te encuentren y te escriban — y ninguno se quede sin respuesta.",
+    kicker: "Agente de WhatsApp con IA",
+    h1: "Tu negocio contestando WhatsApp al instante. 24/7. Aunque tú estés trabajando.",
+    sub: "Un agente de inteligencia artificial que contesta por ti, califica al cliente, junta fotos y medidas, y te pasa el prospecto listo para cotizar. El sitio web, si lo quieres, va como add-on.",
   },
   dolores: [
     "Pierdes clientes porque no alcanzas a contestar WhatsApp a tiempo.",
-    "No apareces en Google Maps cuando alguien busca tu servicio en tu zona.",
-    "Tu competencia se ve más profesional en internet, aunque tú hagas mejor trabajo.",
+    "Los mensajes llegan a deshoras y el que contesta primero se lleva el trabajo.",
+    "Te llega un “hola, info?” sin contexto y se te va el cliente entre tanto mensaje.",
   ],
   conversacion: [
-    { rol: "cliente", texto: "Hola, ¿hacen cotizaciones?" },
-    { rol: "agente", texto: "¡Claro! Con gusto te ayudo. ¿Para qué tipo de proyecto lo necesitas?" },
-    { rol: "cliente", texto: "Para mi casa." },
-    { rol: "agente", texto: "Perfecto. Para darte un número exacto, ¿me compartes una foto del espacio y tu colonia?" },
-    { rol: "cliente", texto: "[envía foto] En Zapopan." },
-    { rol: "agente", texto: "Listo, ya tengo todo. Un asesor te confirma el precio en breve." },
+    { rol: "cliente", texto: "Hola, ¿me pueden cotizar un trabajo?" },
+    { rol: "agente", texto: "¡Claro que sí! 👋 Con gusto le ayudo a cotizar rapidito. ¿Qué servicio necesita?" },
+    { rol: "cliente", texto: "Sí, para mi casa." },
+    { rol: "agente", texto: "Perfecto. ¿Me manda 1 o 2 fotos del área? 📷 Con eso le damos un precio mucho más exacto. ¿Y en qué colonia está?" },
+    { rol: "cliente", texto: "[envía foto] En Providencia." },
+    { rol: "agente", texto: "¡Listo! Ya tengo todo. El equipo le manda su cotización hoy mismo. 🙌" },
   ] as Turno[],
-  ticket: { min: 20000, max: 120000 },
-  roiNota: "Un solo trabajo paga el sistema de todo el año.",
-  waMensaje: "Hola Yovany, quiero saber más del Sistema de Clientes para mi negocio.",
+  ticket: { min: 8000, max: 60000 },
+  roiNota: "Recuperar un solo cliente al mes ya paga el sistema.",
+  waMensaje: "Hola Yovany, quiero saber más del agente de WhatsApp para mi negocio.",
 } as const;
 
 export const hubContent = (): SistemaContent => ({
@@ -136,6 +159,7 @@ export const hubContent = (): SistemaContent => ({
   hero: HUB.hero,
   dolores: [...HUB.dolores],
   conversacion: HUB.conversacion,
+  resumen: RESUMEN_HUB,
   ticket: HUB.ticket,
   roiNota: HUB.roiNota,
   faqs: [...SC_SHARED.faqsBase],
@@ -146,9 +170,10 @@ export const verticalContent = (v: Vertical): SistemaContent => ({
   variant: "vertical",
   slug: v.slug,
   giroKey: v.slug,
-  hero: { kicker: "Sistema de Clientes", h1: v.hero.h1, sub: v.hero.sub },
+  hero: { kicker: "Agente de WhatsApp con IA", h1: v.hero.h1, sub: v.hero.sub },
   dolores: [...v.dolores],
   conversacion: v.conversacion,
+  resumen: v.resumen ?? RESUMEN_HUB,
   ticket: v.ticket,
   roiNota: v.roiNota,
   // FAQ del giro primero (lo más relevante), luego las base.

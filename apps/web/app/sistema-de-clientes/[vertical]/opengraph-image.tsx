@@ -48,7 +48,7 @@ export default async function OgImage({
           }}
         >
           <div style={{ width: 13, height: 13, borderRadius: 99, background: "#f0341a" }} />
-          Sistema de Clientes
+          Agente de WhatsApp con IA
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>

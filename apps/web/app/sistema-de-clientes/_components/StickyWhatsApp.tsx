@@ -2,6 +2,7 @@
 
 import { track } from "../../../lib/analytics";
 import { SITE, waLink } from "../../../lib/site";
+import { useCampaign, withSource } from "../_lib/campaign";
 
 /**
  * Floating WhatsApp button, sticky on mobile only (hidden ≥ 760px via CSS).
@@ -14,18 +15,20 @@ export function StickyWhatsApp({
   message: string;
   vertical: string;
 }) {
+  const source = useCampaign();
+  const msg = withSource(message, source);
   const href =
-    waLink(message) ??
+    waLink(msg) ??
     `mailto:${SITE.email}?subject=${encodeURIComponent(
-      "Sistema de Clientes",
-    )}&body=${encodeURIComponent(message)}`;
+      "Agente de WhatsApp con IA",
+    )}&body=${encodeURIComponent(msg)}`;
 
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => track("sc_whatsapp_click", { vertical, location: "sticky" })}
+      onClick={() => track("sc_whatsapp_click", { vertical, location: "sticky", source })}
       className="sc-sticky-wa"
       aria-label="Escríbeme por WhatsApp"
     >

@@ -29,6 +29,8 @@ const LeadSchema = z.object({
   giro: z.string().trim().min(2, "Dinos a qué se dedica tu negocio.").max(120),
   whatsapp: phone,
   vertical: z.string().max(64).optional(),
+  // Campaign source (utm_source / ref) — which Facebook group, etc.
+  source: z.string().max(64).optional(),
   // Honeypot: real users never fill this (visually hidden).
   company: z.string().max(0).optional().or(z.literal("")),
 });

@@ -19,7 +19,7 @@ export function ServiceJsonLd({
     "@type": "Service",
     name,
     description,
-    serviceType: "Sistema de captación de clientes (sitio web + WhatsApp con IA + Google Maps)",
+    serviceType: "Agente de WhatsApp con IA para calificación de prospectos 24/7 (sitio web opcional)",
     url: `${SITE.url}${path}`,
     provider: {
       "@type": "Person",
