@@ -1,0 +1,225 @@
+{
+  "common": {
+    "bookCall": "Agenda una llamada",
+    "whatsapp": "Chatea por WhatsApp",
+    "whatsappPrefill": "Hola Sendero, me gustaría hablar sobre un proyecto.",
+    "getStarted": "Empecemos",
+    "viewWork": "Ver proyectos",
+    "viewServices": "Ver servicios",
+    "learnMore": "Saber más",
+    "allServices": "Todos los servicios",
+    "backHome": "Volver al inicio",
+    "notFoundTitle": "Página no encontrada",
+    "notFoundText": "Parece que este sendero no lleva a ningún lado. Volvamos a terreno conocido."
+  },
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "work": "Proyectos",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "menu": "Menú",
+    "toggleLocale": "English"
+  },
+  "hero": {
+    "eyebrow": "Agencia de software",
+    "title": "Construimos apps web, móviles y <accent>agentes de IA</accent> que llegan a producción.",
+    "subtitle": "Sendero es tu equipo de producto: diseñamos, construimos y lanzamos software a medida — desde aplicaciones completas hasta agentes de IA y automatizaciones en WhatsApp.",
+    "trust": {
+      "one": "Entrega en semanas",
+      "two": "Stack moderno",
+      "three": "Comunicación directa"
+    }
+  },
+  "logos": {
+    "title": "Construido con las herramientas que usan los mejores equipos"
+  },
+  "services": {
+    "eyebrow": "Servicios",
+    "title": "Todo lo que necesitas para llevar una idea a producto.",
+    "subtitle": "Cuatro capacidades, un mismo equipo. Combínalas según lo que tu proyecto necesita.",
+    "web": {
+      "title": "Aplicaciones web",
+      "description": "Plataformas, dashboards y SaaS con Next.js y React. Rápidas, escalables y listas para crecer.",
+      "points": ["SaaS y plataformas a medida", "Dashboards y paneles internos", "Rendimiento y SEO de primer nivel"]
+    },
+    "mobile": {
+      "title": "Aplicaciones móviles",
+      "description": "Apps para iOS y Android con React Native y Expo. Una sola base de código, experiencia nativa.",
+      "points": ["iOS y Android a la vez", "Publicación en las tiendas", "Notificaciones y offline"]
+    },
+    "ai": {
+      "title": "Agentes de IA",
+      "description": "Copilotos, asistentes y automatizaciones que razonan sobre tus datos y actúan por ti.",
+      "points": ["Asistentes sobre tus datos (RAG)", "Automatización de flujos", "Integración con tus sistemas"]
+    },
+    "whatsapp": {
+      "title": "Agentes de IA en WhatsApp",
+      "description": "Atiende, vende y da soporte 24/7 con un agente de IA integrado en WhatsApp Business.",
+      "points": ["Atención y ventas 24/7", "Integración con tu CRM", "Escala sin ampliar el equipo"]
+    }
+  },
+  "process": {
+    "eyebrow": "Cómo trabajamos",
+    "title": "Un sendero claro de la idea al lanzamiento.",
+    "subtitle": "Sin sorpresas: sabes en qué etapa estamos y qué sigue en todo momento.",
+    "steps": {
+      "discovery": {
+        "title": "Descubrimiento",
+        "description": "Entendemos tu negocio, usuarios y objetivos. Definimos alcance y prioridades."
+      },
+      "design": {
+        "title": "Diseño",
+        "description": "Prototipos y UI que validamos contigo antes de escribir una línea de código."
+      },
+      "build": {
+        "title": "Construcción",
+        "description": "Desarrollo en ciclos cortos con demos cada semana. Código limpio y probado."
+      },
+      "launch": {
+        "title": "Lanzamiento",
+        "description": "Desplegamos, medimos y afinamos. Tu producto en manos de usuarios reales."
+      },
+      "iterate": {
+        "title": "Iteración",
+        "description": "Mejora continua con datos. Crecemos el producto contigo a largo plazo."
+      }
+    }
+  },
+  "values": {
+    "eyebrow": "Por qué Sendero",
+    "title": "Un socio técnico, no solo un proveedor.",
+    "subtitle": "Construimos como si el producto fuera nuestro, porque su éxito también lo es.",
+    "items": {
+      "shipFast": {
+        "title": "Entrega rápida",
+        "description": "Ciclos cortos y demos cada semana. Ves avances reales, no promesas."
+      },
+      "ownership": {
+        "title": "El código es tuyo",
+        "description": "Sin cajas negras ni lock-in. Te entregamos todo, documentado y listo."
+      },
+      "senior": {
+        "title": "Equipo senior",
+        "description": "Trabajas directo con quienes construyen. Sin intermediarios ni ruido."
+      },
+      "aiNative": {
+        "title": "IA de forma nativa",
+        "description": "Integramos IA donde aporta valor real, no como adorno de marketing."
+      }
+    }
+  },
+  "stack": {
+    "eyebrow": "Stack tecnológico",
+    "title": "Herramientas modernas, decisiones probadas.",
+    "subtitle": "Elegimos tecnología por la que apostaríamos nuestro propio producto."
+  },
+  "work": {
+    "eyebrow": "Proyectos",
+    "title": "El tipo de producto que construimos.",
+    "subtitle": "Ejemplos ilustrativos del trabajo que hacemos con nuestros clientes.",
+    "note": "Ejemplos ilustrativos. ¿Quieres ver casos concretos? Hablemos.",
+    "resultLabel": "Resultado",
+    "items": {
+      "logistics": {
+        "name": "Plataforma SaaS de logística",
+        "category": "Aplicación web",
+        "description": "Panel de seguimiento en tiempo real con optimización de rutas para una operación de última milla.",
+        "result": "Menos tiempo por entrega y visibilidad total de la flota."
+      },
+      "marketplace": {
+        "name": "Marketplace móvil",
+        "category": "Aplicación móvil",
+        "description": "App iOS y Android para conectar oferta y demanda con pagos integrados.",
+        "result": "Lanzamiento en ambas tiendas con una sola base de código."
+      },
+      "support": {
+        "name": "Agente de soporte con IA",
+        "category": "Agente de IA",
+        "description": "Asistente que responde sobre la documentación del producto y escala a un humano cuando hace falta.",
+        "result": "Respuestas instantáneas y menos carga para el equipo."
+      },
+      "whatsappBot": {
+        "name": "Agente de ventas en WhatsApp",
+        "category": "WhatsApp + IA",
+        "description": "Agente que califica leads, agenda y responde 24/7 integrado con el CRM del cliente.",
+        "result": "Atención sin esperas y más oportunidades cerradas."
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Nosotros",
+    "title": "Somos Sendero.",
+    "lead": "Un equipo de producto que convierte ideas en software que la gente usa de verdad.",
+    "body": [
+      "Sendero nació de una idea simple: la mayoría de los proyectos de software fracasan no por falta de tecnología, sino por falta de un camino claro. Nosotros trazamos ese sendero — del concepto a producción — y lo recorremos contigo.",
+      "Trabajamos como una extensión de tu equipo. Diseñamos, construimos y lanzamos con la misma exigencia con la que lo haríamos para nuestro propio producto, apoyándonos en un stack moderno y en IA donde aporta valor real.",
+      "Ya sea una aplicación completa, un agente de IA o una automatización en WhatsApp, nuestro objetivo es el mismo: que llegues a producción rápido y con algo de lo que estés orgulloso."
+    ],
+    "valuesTitle": "Lo que nos mueve",
+    "ctaTitle": "¿Recorremos el sendero juntos?"
+  },
+  "cta": {
+    "title": "¿Listo para llevar tu idea a producción?",
+    "subtitle": "Agenda una llamada de 30 minutos o escríbenos por WhatsApp. Sin compromiso, respuesta el mismo día.",
+    "primary": "Agenda una llamada",
+    "secondary": "Chatea por WhatsApp"
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Hablemos de tu proyecto.",
+    "subtitle": "Cuéntanos qué tienes en mente. Te respondemos el mismo día.",
+    "bookTitle": "Agenda una llamada",
+    "bookSubtitle": "Elige el horario que mejor te venga para una llamada de 30 minutos.",
+    "whatsappTitle": "¿Prefieres WhatsApp?",
+    "whatsappSubtitle": "Escríbenos directamente y te atendemos al instante.",
+    "form": {
+      "title": "Envíanos un mensaje",
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Email",
+      "emailPlaceholder": "tucorreo@empresa.com",
+      "company": "Empresa",
+      "companyPlaceholder": "Nombre de tu empresa (opcional)",
+      "service": "¿Qué necesitas?",
+      "servicePlaceholder": "Selecciona un servicio",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntanos sobre tu proyecto…",
+      "submit": "Enviar mensaje",
+      "submitting": "Enviando…",
+      "success": "¡Gracias! Te responderemos muy pronto.",
+      "error": "Algo salió mal. Inténtalo de nuevo o escríbenos por WhatsApp.",
+      "invalid": "Revisa los campos marcados."
+    }
+  },
+  "footer": {
+    "tagline": "Tu sendero de la idea al producto.",
+    "servicesTitle": "Servicios",
+    "companyTitle": "Empresa",
+    "contactTitle": "Contacto",
+    "rights": "Todos los derechos reservados.",
+    "madeWith": "Diseñado y construido por Sendero."
+  },
+  "metadata": {
+    "home": {
+      "title": "Sendero — Desarrollo de software, apps y agentes de IA",
+      "description": "Agencia de software que diseña y construye aplicaciones web, móviles, agentes de IA e integraciones de IA en WhatsApp. De la idea a producción."
+    },
+    "services": {
+      "title": "Servicios",
+      "description": "Desarrollo de aplicaciones web y móviles, agentes de IA e integraciones de IA en WhatsApp. Un solo equipo para llevar tu producto a producción."
+    },
+    "work": {
+      "title": "Proyectos",
+      "description": "El tipo de productos que construye Sendero: plataformas web, apps móviles y agentes de IA."
+    },
+    "about": {
+      "title": "Nosotros",
+      "description": "Sendero es un equipo de producto que convierte ideas en software que la gente usa."
+    },
+    "contact": {
+      "title": "Contacto",
+      "description": "Hablemos de tu proyecto. Agenda una llamada o escríbenos por WhatsApp."
+    }
+  }
+}

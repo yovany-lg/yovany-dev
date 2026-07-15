@@ -20,10 +20,11 @@ Filter to one package with `pnpm dev --filter=web` (or `--filter=@repo/ui`). The
 
 ## Structure
 
-A Turborepo monorepo, but in practice it's **one Next.js app** plus shared config:
+A Turborepo monorepo with **two Next.js apps** plus shared config:
 
-- `apps/web` — the entire site (Next.js 16 App Router, React 19, Tailwind v4). Despite the README (a stock create-turbo template), there is no `docs` app.
-- `packages/ui` (`@repo/ui`) — stub shared component library, exported as raw `.tsx` via `./src/*`. Currently unused by `web`'s real UI.
+- `apps/web` — the yovany.dev site (Next.js 16 App Router, React 19, Tailwind v4). Despite the README (a stock create-turbo template), there is no `docs` app.
+- `apps/sendero` — the **Sendero** agency marketing site (`sendero.pro`), a fully separate brand: bilingual ES/EN via **next-intl** (`[locale]` routing, `proxy.ts`), **warm-paper editorial** design — a deliberate **sibling of yovany.dev** (`apps/web`): near-black ink `#0c0c0b` on off-white paper `#faf9f6`, 1px hairlines (no glow/gradients/cards), one deep-green **"Monte"** accent `#235f41` used sparingly, **Archivo** display + **Geist**/**Geist Mono** (the shared body/label faces), on retained **shadcn/ui** primitives + Tailwind v4. Structure lives in semantic classes in `app/globals.css` (`.section`/`.shell`/`.kicker`/`.svc`/`.work-row`/etc.), not utility soup. The "sendero" (trail) motif shows up as the hero elevation map + dashed process waypoints. Dev on **port 3001**. Deliberately isolated from `web` at the brand level — different domain, accent, and i18n approach; shares the `@repo/*` config packages, the Geist faces, and PostHog analytics. Booking uses **`@calcom/embed-react`** (`calLink` from `NEXT_PUBLIC_CALCOM_LINK`, e.g. `yovany/30min`), themed Monte. WhatsApp contact channel is currently disabled (graceful no-op); the WhatsApp *AI-agent offering* copy stays. Its copy lives in `apps/sendero/messages/{es,en}.json`; config in `apps/sendero/lib/site.ts`.
+- `packages/ui` (`@repo/ui`) — stub shared component library, exported as raw `.tsx` via `./src/*`. Currently unused by both apps' real UI.
 - `packages/eslint-config` (`@repo/eslint-config`), `packages/typescript-config` (`@repo/typescript-config`) — shared configs consumed via `workspace:*`.
 
 ## Architecture & conventions
@@ -36,7 +37,7 @@ A Turborepo monorepo, but in practice it's **one Next.js app** plus shared confi
 
 The subscribe route also uses a hidden `company` honeypot field: a filled honeypot returns a fake success (`ok: true`) and does nothing.
 
-**Env vars** are declared in `turbo.json`'s `globalEnv` (so the build cache busts on change): `NEXT_PUBLIC_BOOKING_URL`, `NEXT_PUBLIC_LEAD_MAGNET_URL`, `NEXT_PUBLIC_POSTHOG_KEY`, `NEXT_PUBLIC_POSTHOG_HOST`, `RESEND_API_KEY`, `RESEND_FROM`, `CONVERTKIT_API_KEY`, `CONVERTKIT_FORM_ID`. Add new vars there too. `.env*` is gitignored.
+**Env vars** are declared in `turbo.json`'s `globalEnv` (so the build cache busts on change): `NEXT_PUBLIC_BOOKING_URL`, `NEXT_PUBLIC_LEAD_MAGNET_URL`, `NEXT_PUBLIC_POSTHOG_KEY`/`NEXT_PUBLIC_POSTHOG_HOST` (shared with the Sendero app), `RESEND_API_KEY`, `RESEND_FROM`, `CONVERTKIT_API_KEY`, `CONVERTKIT_FORM_ID`. Add new vars there too. `.env*` is gitignored.
 
 **SEO/metadata is centralized in `app/layout.tsx`** (Metadata API, JSON-LD `Person` + `ProfessionalService` graph) driven off `site.ts`. OG image, icons, sitemap, and robots use Next file conventions (`opengraph-image.tsx`, `icon.tsx`, `apple-icon.tsx`, `sitemap.ts`, `robots.ts`) — there are no static equivalents.
 

@@ -1,0 +1,225 @@
+{
+  "common": {
+    "bookCall": "Book a call",
+    "whatsapp": "Chat on WhatsApp",
+    "whatsappPrefill": "Hi Sendero, I'd like to talk about a project.",
+    "getStarted": "Let's start",
+    "viewWork": "View work",
+    "viewServices": "View services",
+    "learnMore": "Learn more",
+    "allServices": "All services",
+    "backHome": "Back home",
+    "notFoundTitle": "Page not found",
+    "notFoundText": "Looks like this trail leads nowhere. Let's get you back on track."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "menu": "Menu",
+    "toggleLocale": "Español"
+  },
+  "hero": {
+    "eyebrow": "Software agency",
+    "title": "We build web, mobile apps and <accent>AI agents</accent> that actually ship.",
+    "subtitle": "Sendero is your product team: we design, build and ship custom software — from full applications to AI agents and WhatsApp automations.",
+    "trust": {
+      "one": "Ships in weeks",
+      "two": "Modern stack",
+      "three": "Direct communication"
+    }
+  },
+  "logos": {
+    "title": "Built with the tools the best teams use"
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "Everything you need to take an idea to product.",
+    "subtitle": "Four capabilities, one team. Combine them to fit exactly what your project needs.",
+    "web": {
+      "title": "Web applications",
+      "description": "Platforms, dashboards and SaaS built with Next.js and React. Fast, scalable and ready to grow.",
+      "points": ["Custom SaaS and platforms", "Dashboards and internal tools", "Top-tier performance and SEO"]
+    },
+    "mobile": {
+      "title": "Mobile applications",
+      "description": "iOS and Android apps with React Native and Expo. One codebase, native experience.",
+      "points": ["iOS and Android at once", "App Store & Play publishing", "Push notifications and offline"]
+    },
+    "ai": {
+      "title": "AI agents",
+      "description": "Copilots, assistants and automations that reason over your data and act for you.",
+      "points": ["Assistants over your data (RAG)", "Workflow automation", "Integration with your systems"]
+    },
+    "whatsapp": {
+      "title": "WhatsApp AI agents",
+      "description": "Support, sell and assist 24/7 with an AI agent integrated into WhatsApp Business.",
+      "points": ["24/7 support and sales", "Integrated with your CRM", "Scale without growing the team"]
+    }
+  },
+  "process": {
+    "eyebrow": "How we work",
+    "title": "A clear path from idea to launch.",
+    "subtitle": "No surprises: you always know what stage we're at and what's next.",
+    "steps": {
+      "discovery": {
+        "title": "Discovery",
+        "description": "We understand your business, users and goals. We define scope and priorities."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Prototypes and UI we validate with you before writing a single line of code."
+      },
+      "build": {
+        "title": "Build",
+        "description": "Development in short cycles with weekly demos. Clean, tested code."
+      },
+      "launch": {
+        "title": "Launch",
+        "description": "We deploy, measure and fine-tune. Your product in the hands of real users."
+      },
+      "iterate": {
+        "title": "Iterate",
+        "description": "Continuous improvement with data. We grow the product with you, long term."
+      }
+    }
+  },
+  "values": {
+    "eyebrow": "Why Sendero",
+    "title": "A technical partner, not just a vendor.",
+    "subtitle": "We build as if the product were ours, because its success is ours too.",
+    "items": {
+      "shipFast": {
+        "title": "Ships fast",
+        "description": "Short cycles and weekly demos. You see real progress, not promises."
+      },
+      "ownership": {
+        "title": "You own the code",
+        "description": "No black boxes, no lock-in. We hand over everything, documented and ready."
+      },
+      "senior": {
+        "title": "Senior team",
+        "description": "You work directly with the people building it. No middlemen, no noise."
+      },
+      "aiNative": {
+        "title": "AI-native",
+        "description": "We add AI where it delivers real value, not as marketing decoration."
+      }
+    }
+  },
+  "stack": {
+    "eyebrow": "Tech stack",
+    "title": "Modern tools, proven decisions.",
+    "subtitle": "We choose technology we'd bet our own product on."
+  },
+  "work": {
+    "eyebrow": "Work",
+    "title": "The kind of product we build.",
+    "subtitle": "Illustrative examples of the work we do with our clients.",
+    "note": "Illustrative examples. Want to see concrete cases? Let's talk.",
+    "resultLabel": "Result",
+    "items": {
+      "logistics": {
+        "name": "Logistics SaaS platform",
+        "category": "Web application",
+        "description": "Real-time tracking dashboard with route optimization for a last-mile operation.",
+        "result": "Less time per delivery and full fleet visibility."
+      },
+      "marketplace": {
+        "name": "Mobile marketplace",
+        "category": "Mobile application",
+        "description": "iOS and Android app connecting supply and demand with built-in payments.",
+        "result": "Launched on both stores from a single codebase."
+      },
+      "support": {
+        "name": "AI support agent",
+        "category": "AI agent",
+        "description": "Assistant that answers from product docs and escalates to a human when needed.",
+        "result": "Instant answers and a lighter load for the team."
+      },
+      "whatsappBot": {
+        "name": "WhatsApp sales agent",
+        "category": "WhatsApp + AI",
+        "description": "Agent that qualifies leads, books and replies 24/7, integrated with the client's CRM.",
+        "result": "No wait times and more opportunities closed."
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "We are Sendero.",
+    "lead": "A product team that turns ideas into software people actually use.",
+    "body": [
+      "Sendero was born from a simple idea: most software projects fail not for lack of technology, but for lack of a clear path. We map that path — from concept to production — and walk it with you.",
+      "We work as an extension of your team. We design, build and ship with the same standard we'd hold for our own product, leaning on a modern stack and on AI where it delivers real value.",
+      "Whether it's a full application, an AI agent or a WhatsApp automation, our goal is the same: get you to production fast, with something you're proud of."
+    ],
+    "valuesTitle": "What drives us",
+    "ctaTitle": "Shall we walk the path together?"
+  },
+  "cta": {
+    "title": "Ready to take your idea to production?",
+    "subtitle": "Book a 30-minute call or message us on WhatsApp. No strings attached, same-day reply.",
+    "primary": "Book a call",
+    "secondary": "Chat on WhatsApp"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about your project.",
+    "subtitle": "Tell us what you have in mind. We reply the same day.",
+    "bookTitle": "Book a call",
+    "bookSubtitle": "Pick the time that works best for a 30-minute call.",
+    "whatsappTitle": "Prefer WhatsApp?",
+    "whatsappSubtitle": "Message us directly and we'll get right back to you.",
+    "form": {
+      "title": "Send us a message",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "company": "Company",
+      "companyPlaceholder": "Your company name (optional)",
+      "service": "What do you need?",
+      "servicePlaceholder": "Select a service",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project…",
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "success": "Thanks! We'll get back to you very soon.",
+      "error": "Something went wrong. Try again or message us on WhatsApp.",
+      "invalid": "Please check the highlighted fields."
+    }
+  },
+  "footer": {
+    "tagline": "Your path from idea to product.",
+    "servicesTitle": "Services",
+    "companyTitle": "Company",
+    "contactTitle": "Contact",
+    "rights": "All rights reserved.",
+    "madeWith": "Designed and built by Sendero."
+  },
+  "metadata": {
+    "home": {
+      "title": "Sendero — Software, apps and AI agent development",
+      "description": "Software agency designing and building web apps, mobile apps, AI agents and WhatsApp AI integrations. From idea to production."
+    },
+    "services": {
+      "title": "Services",
+      "description": "Web and mobile app development, AI agents and WhatsApp AI integrations. One team to take your product to production."
+    },
+    "work": {
+      "title": "Work",
+      "description": "The kind of products Sendero builds: web platforms, mobile apps and AI agents."
+    },
+    "about": {
+      "title": "About",
+      "description": "Sendero is a product team that turns ideas into software people use."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Let's talk about your project. Book a call or message us on WhatsApp."
+    }
+  }
+}
