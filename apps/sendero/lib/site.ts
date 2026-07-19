@@ -7,6 +7,9 @@ import { routing } from "@/i18n/routing";
  */
 export const siteConfig = {
   name: "Sendero",
+  // Registered legal name behind the Sendero brand. Shown in the footer so
+  // Meta / WhatsApp business verification can match the domain to the business.
+  legalName: "José Yovany Luis García",
   domain: "sendero.pro",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://sendero.pro",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hola@sendero.pro",

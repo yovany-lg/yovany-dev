@@ -109,7 +109,8 @@ export function SiteFooter() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row">
           <p>
-            © {year} {siteConfig.name}. {t("footer.rights")}
+            © {year} {siteConfig.legalName} ({siteConfig.name}).{" "}
+            {t("footer.rights")}
           </p>
           <p className="font-mono text-xs">{t("footer.madeWith")}</p>
         </div>
