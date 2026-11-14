@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { BookCallButton } from "@/components/layout/cta-buttons";
+import { ProductLink } from "@/components/layout/product-link";
 import { siteConfig } from "@/lib/site";
 
 export function CtaBand() {
@@ -30,6 +31,15 @@ export function CtaBand() {
           >
             <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
           </Button>
+          <p className="close-note">
+            <ProductLink
+              product="citania"
+              location="final_cta"
+              className="transition-colors hover:text-[color:var(--monte)]"
+            >
+              {t("cta.clinicNote")} ↗
+            </ProductLink>
+          </p>
         </div>
       </div>
     </Section>

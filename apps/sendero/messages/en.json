@@ -10,7 +10,8 @@
     "allServices": "All services",
     "backHome": "Back home",
     "notFoundTitle": "Page not found",
-    "notFoundText": "Looks like this trail leads nowhere. Let's get you back on track."
+    "notFoundText": "Looks like this trail leads nowhere. Let's get you back on track.",
+    "visitCitania": "Meet Citania"
   },
   "nav": {
     "home": "Home",
@@ -19,45 +20,64 @@
     "about": "About",
     "contact": "Contact",
     "menu": "Menu",
-    "toggleLocale": "Español"
+    "toggleLocale": "Español",
+    "citania": "Citania",
+    "privacy": "Privacy notice"
   },
   "hero": {
     "eyebrow": "Software agency",
-    "title": "We build web, mobile apps and <accent>AI agents</accent> that actually ship.",
-    "subtitle": "Sendero is your product team: we design, build and ship custom software — from full applications to AI agents and WhatsApp automations.",
+    "title": "The agency behind <accent>Citania</accent> — and your next product.",
+    "subtitle": "Sendero is Yovany Luis's software agency. We build and run our own products — the first is Citania — and we build custom software for companies that need to get to production.",
     "trust": {
-      "one": "Ships in weeks",
-      "two": "Modern stack",
-      "three": "Direct communication"
+      "one": "Citania, in production",
+      "two": "Custom software",
+      "three": "Work directly with the builder"
     }
   },
   "logos": {
     "title": "Built with the tools the best teams use"
   },
   "services": {
-    "eyebrow": "Services",
-    "title": "Everything you need to take an idea to product.",
-    "subtitle": "Four capabilities, one team. Combine them to fit exactly what your project needs.",
+    "eyebrow": "Custom software",
+    "title": "Custom software, from the team that builds Citania.",
+    "subtitle": "What we learn running our own products goes into your project. Four capabilities, combined to fit what you need.",
     "web": {
       "title": "Web applications",
       "description": "Platforms, dashboards and SaaS built with Next.js and React. Fast, scalable and ready to grow.",
-      "points": ["Custom SaaS and platforms", "Dashboards and internal tools", "Top-tier performance and SEO"]
+      "points": [
+        "Custom SaaS and platforms",
+        "Dashboards and internal tools",
+        "Top-tier performance and SEO"
+      ]
     },
     "mobile": {
       "title": "Mobile applications",
       "description": "iOS and Android apps with React Native and Expo. One codebase, native experience.",
-      "points": ["iOS and Android at once", "App Store & Play publishing", "Push notifications and offline"]
+      "points": [
+        "iOS and Android at once",
+        "App Store & Play publishing",
+        "Push notifications and offline"
+      ]
     },
     "ai": {
       "title": "AI agents",
       "description": "Copilots, assistants and automations that reason over your data and act for you.",
-      "points": ["Assistants over your data (RAG)", "Workflow automation", "Integration with your systems"]
+      "points": [
+        "Assistants over your data (RAG)",
+        "Workflow automation",
+        "Integration with your systems"
+      ]
     },
     "whatsapp": {
-      "title": "WhatsApp AI agents",
-      "description": "Support, sell and assist 24/7 with an AI agent integrated into WhatsApp Business.",
-      "points": ["24/7 support and sales", "Integrated with your CRM", "Scale without growing the team"]
-    }
+      "title": "WhatsApp & integrations",
+      "description": "Custom automations and integrations on top of WhatsApp Business, your CRM and your internal systems.",
+      "points": [
+        "Custom WhatsApp Business flows",
+        "Integration with your CRM and internal systems",
+        "For clinics: Citania, ready to run"
+      ]
+    },
+    "clinicNote": "Looking for WhatsApp attention for a clinic? That's Citania — visit citania.mx."
   },
   "process": {
     "eyebrow": "How we work",
@@ -116,11 +136,17 @@
   },
   "work": {
     "eyebrow": "Work",
-    "title": "The kind of product we build.",
-    "subtitle": "Illustrative examples of the work we do with our clients.",
-    "note": "Illustrative examples. Want to see concrete cases? Let's talk.",
+    "title": "What we build.",
+    "subtitle": "Our own product in production, plus examples of the kind of custom software we build.",
+    "note": "Except for Citania, these are illustrative examples. Want to see concrete cases? Let's talk.",
     "resultLabel": "Result",
     "items": {
+      "citania": {
+        "name": "Citania",
+        "category": "Own product · WhatsApp + AI",
+        "description": "AI WhatsApp agent, inbox/CRM and scheduling for clinics. Designed, built and operated by Sendero.",
+        "result": "In production. See it at citania.mx."
+      },
       "logistics": {
         "name": "Logistics SaaS platform",
         "category": "Web application",
@@ -138,32 +164,27 @@
         "category": "AI agent",
         "description": "Assistant that answers from product docs and escalates to a human when needed.",
         "result": "Instant answers and a lighter load for the team."
-      },
-      "whatsappBot": {
-        "name": "WhatsApp sales agent",
-        "category": "WhatsApp + AI",
-        "description": "Agent that qualifies leads, books and replies 24/7, integrated with the client's CRM.",
-        "result": "No wait times and more opportunities closed."
       }
     }
   },
   "about": {
     "eyebrow": "About",
     "title": "We are Sendero.",
-    "lead": "A product team that turns ideas into software people actually use.",
+    "lead": "Yovany Luis's software agency: our own products, like Citania, and custom software.",
     "body": [
-      "Sendero was born from a simple idea: most software projects fail not for lack of technology, but for lack of a clear path. We map that path — from concept to production — and walk it with you.",
-      "We work as an extension of your team. We design, build and ship with the same standard we'd hold for our own product, leaning on a modern stack and on AI where it delivers real value.",
-      "Whether it's a full application, an AI agent or a WhatsApp automation, our goal is the same: get you to production fast, with something you're proud of."
+      "Sendero is the software agency founded by Yovany Luis, a product engineer with more than eight years shipping production software. We map the path — from concept to production — and walk it with you.",
+      "We do two things. We build and operate our own products: the first is Citania, AI-powered WhatsApp attention for clinics (citania.mx). And we build custom software — web and mobile apps, AI agents and integrations — for companies that need to get to production.",
+      "Running our own products forces us to build like people who live with the result every day. We bring that same standard to every client project."
     ],
     "valuesTitle": "What drives us",
     "ctaTitle": "Shall we walk the path together?"
   },
   "cta": {
-    "title": "Ready to take your idea to production?",
-    "subtitle": "Book a 30-minute call or message us on WhatsApp. No strings attached, same-day reply.",
+    "title": "Have a custom project?",
+    "subtitle": "Book a 30-minute call or email us. No strings attached.",
     "primary": "Book a call",
-    "secondary": "Chat on WhatsApp"
+    "secondary": "Chat on WhatsApp",
+    "clinicNote": "Run a clinic? Citania lives at citania.mx"
   },
   "contact": {
     "eyebrow": "Contact",
@@ -188,38 +209,71 @@
       "submit": "Send message",
       "submitting": "Sending…",
       "success": "Thanks! We'll get back to you very soon.",
-      "error": "Something went wrong. Try again or message us on WhatsApp.",
-      "invalid": "Please check the highlighted fields."
+      "error": "Something went wrong. Please try again or email us.",
+      "invalid": "Please check the highlighted fields.",
+      "privacy": "By sending this form you accept our <link>Privacy notice</link>."
     }
   },
   "footer": {
-    "tagline": "Your path from idea to product.",
+    "tagline": "The software agency behind Citania.",
     "servicesTitle": "Services",
     "companyTitle": "Company",
     "contactTitle": "Contact",
     "rights": "All rights reserved.",
-    "madeWith": "Designed and built by Sendero."
+    "madeWith": "Designed and built by Sendero.",
+    "productsTitle": "Products",
+    "privacy": "Privacy notice"
   },
   "metadata": {
     "home": {
-      "title": "Sendero — Software, apps and AI agent development",
-      "description": "Software agency designing and building web apps, mobile apps, AI agents and WhatsApp AI integrations. From idea to production."
+      "title": "Sendero — The software agency behind Citania",
+      "description": "Sendero is Yovany Luis's software agency: our own products, like Citania (AI-powered WhatsApp attention for clinics), and custom software — web and mobile apps, AI agents and integrations."
     },
     "services": {
-      "title": "Services",
-      "description": "Web and mobile app development, AI agents and WhatsApp AI integrations. One team to take your product to production."
+      "title": "Custom software",
+      "description": "Web and mobile apps, AI agents and integrations with WhatsApp and your systems, from the team that builds Citania."
     },
     "work": {
       "title": "Work",
-      "description": "The kind of products Sendero builds: web platforms, mobile apps and AI agents."
+      "description": "Citania, our product in production, and the kind of custom software Sendero builds."
     },
     "about": {
       "title": "About",
-      "description": "Sendero is a product team that turns ideas into software people use."
+      "description": "Sendero is Yovany Luis's software agency: our own products, like Citania, and custom software."
     },
     "contact": {
       "title": "Contact",
       "description": "Let's talk about your project. Book a call or message us on WhatsApp."
+    },
+    "privacy": {
+      "title": "Privacy notice",
+      "description": "Sendero's privacy notice: what personal data we collect, why, and how to exercise your ARCO rights."
     }
+  },
+  "products": {
+    "eyebrow": "Products",
+    "title": "Our own products, built and run by us.",
+    "subtitle": "Alongside custom projects, Sendero designs, builds and operates its own products. The first one is Citania.",
+    "citania": {
+      "label": "Product 01 · In production",
+      "name": "Citania",
+      "tagline": "AI-powered WhatsApp attention for clinics.",
+      "description": "A managed service: an AI agent replies to every WhatsApp message within seconds, hands the conversation to the front desk when needed and keeps everything in one inbox, with built-in scheduling. We're starting with dental clinics.",
+      "points": [
+        "Replies to every message within seconds",
+        "Clear handoff to the front desk",
+        "Conversations, contacts and schedule in one inbox",
+        "Set up and operated by our team"
+      ],
+      "forClinics": "Run a clinic? Plans, pricing and a demo live at citania.mx.",
+      "cta": "Visit citania.mx"
+    }
+  },
+  "privacy": {
+    "eyebrow": "Legal",
+    "title": "Privacy notice",
+    "lead": "How we handle your personal data under Mexico's Federal Law on the Protection of Personal Data Held by Private Parties (LFPDPPP).",
+    "updated": "Last updated",
+    "languageNote": "This privacy notice is published in Spanish, which is the governing version under Mexican law. If you need help understanding it, email us."
   }
 }

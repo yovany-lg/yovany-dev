@@ -15,13 +15,17 @@ export type CtaLocation =
   | "whatsapp_fab"
   | "services_page"
   | "work_page"
-  | "footer";
+  | "footer"
+  | "products"
+  | "about_page";
 
 type Props = Record<string, string | number | boolean | undefined>;
 
 type EventMap = {
   cta_book_call: { location: CtaLocation; locale: string };
   cta_whatsapp: { location: CtaLocation; locale: string };
+  // Outbound click to a Sendero product site (e.g. citania.mx).
+  product_click: { product: string; location: CtaLocation; locale: string };
   locale_switched: { from: string; to: string };
   service_viewed: { service: string; locale: string };
   contact_submitted: { service?: string; locale: string };

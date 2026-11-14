@@ -1,7 +1,8 @@
 import { useTranslations } from "next-intl";
-import { Mail } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Logo } from "@/components/layout/logo";
+import { ProductLink } from "@/components/layout/product-link";
 import { siteConfig } from "@/lib/site";
 
 // lucide-react v1 removed brand logos (trademark), so we inline them.
@@ -40,7 +41,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-background/40">
       <div className="mx-auto w-full max-w-6xl py-16 container-px">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
           <div className="flex flex-col gap-4">
             <Logo />
             <p className="max-w-xs text-sm text-muted-foreground">
@@ -75,6 +76,17 @@ export function SiteFooter() {
             </div>
           </div>
 
+          <FooterCol title={t("footer.productsTitle")}>
+            <ProductLink
+              product="citania"
+              location="footer"
+              className="inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {siteConfig.products.citania.name}
+              <ArrowUpRight className="size-3.5" />
+            </ProductLink>
+          </FooterCol>
+
           <FooterCol title={t("footer.servicesTitle")}>
             {services.map((s, i) => (
               <FooterLink key={i} href={s.href}>
@@ -89,6 +101,7 @@ export function SiteFooter() {
                 {c.label}
               </FooterLink>
             ))}
+            <FooterLink href="/privacidad">{t("footer.privacy")}</FooterLink>
           </FooterCol>
 
           <FooterCol title={t("footer.contactTitle")}>
@@ -112,7 +125,15 @@ export function SiteFooter() {
             © {year} {siteConfig.legalName} ({siteConfig.name}).{" "}
             {t("footer.rights")}
           </p>
-          <p className="font-mono text-xs">{t("footer.madeWith")}</p>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/privacidad"
+              className="transition-colors hover:text-foreground"
+            >
+              {t("footer.privacy")}
+            </Link>
+            <p className="font-mono text-xs">{t("footer.madeWith")}</p>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,7 +1,8 @@
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookCallButton } from "@/components/layout/cta-buttons";
+import { ProductLink } from "@/components/layout/product-link";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -30,7 +31,10 @@ export function Hero() {
               variant="outline"
               className="h-11 rounded-md px-5 text-[0.95rem]"
             >
-              <Link href="/work">{c("viewWork")}</Link>
+              <ProductLink product="citania" location="hero">
+                {c("visitCitania")}
+                <ArrowUpRight className="size-4" />
+              </ProductLink>
             </Button>
           </div>
 

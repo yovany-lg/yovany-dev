@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations, useLocale } from "next-intl";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { Link } from "@/i18n/navigation";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -123,6 +124,19 @@ export function ContactForm() {
           {...register("message")}
         />
       </Field>
+
+      <p className="text-sm text-[color:var(--ink-muted)]">
+        {t.rich("privacy", {
+          link: (chunks) => (
+            <Link
+              href="/privacidad"
+              className="text-[color:var(--ink)] underline decoration-[color:var(--hairline-hard)] decoration-1 underline-offset-4 hover:decoration-[color:var(--monte)]"
+            >
+              {chunks}
+            </Link>
+          ),
+        })}
+      </p>
 
       <Button
         type="submit"

@@ -1,8 +1,6 @@
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import { Section, SectionHeader } from "@/components/layout/section";
-
-const ITEMS = ["logistics", "marketplace", "support", "whatsappBot"] as const;
+import { WorkCard, WORK_ITEMS } from "@/components/sections/work-card";
 
 export function WorkTeaser() {
   const t = useTranslations("work");
@@ -16,18 +14,8 @@ export function WorkTeaser() {
       />
 
       <div className="work-list">
-        {ITEMS.map((key) => (
-          <Link key={key} href="/work" className="work-row">
-            <div>
-              <span className="work-cat">{t(`items.${key}.category`)}</span>
-              <div className="work-name">{t(`items.${key}.name`)}</div>
-            </div>
-            <p className="work-desc">{t(`items.${key}.description`)}</p>
-            <div className="work-result">
-              <b>{t("resultLabel")}</b>
-              {t(`items.${key}.result`)}
-            </div>
-          </Link>
+        {WORK_ITEMS.map((key) => (
+          <WorkCard key={key} itemKey={key} href="/work" location="products" />
         ))}
       </div>
 

@@ -18,6 +18,11 @@ export const siteConfig = {
   calLink: process.env.NEXT_PUBLIC_CALCOM_LINK ?? "yovany/30min",
   // WhatsApp number in international format, digits only (no + or spaces).
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "10000000000",
+  // Products built and operated by Sendero. Clinic buyers are sent to the
+  // product's own site — sendero.pro never sells Citania directly.
+  products: {
+    citania: { name: "Citania", url: "https://citania.mx" },
+  },
   social: {
     github: "https://github.com/sendero",
     linkedin: "https://www.linkedin.com/company/sendero",

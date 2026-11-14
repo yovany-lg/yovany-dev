@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Menu } from "lucide-react";
+import { ArrowUpRight, Menu } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -17,6 +17,7 @@ import {
 import { Logo } from "@/components/layout/logo";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 import { BookCallButton } from "@/components/layout/cta-buttons";
+import { ProductLink } from "@/components/layout/product-link";
 
 const NAV = [
   { href: "/services", key: "services" },
@@ -70,6 +71,14 @@ export function SiteHeader() {
               </Link>
             );
           })}
+          <ProductLink
+            product="citania"
+            location="header"
+            className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            {t("citania")}
+            <ArrowUpRight className="size-3.5" />
+          </ProductLink>
         </nav>
 
         <div className="flex items-center gap-1.5">
@@ -113,6 +122,15 @@ export function SiteHeader() {
                     </Link>
                   </SheetClose>
                 ))}
+                <ProductLink
+                  product="citania"
+                  location="header"
+                  onClick={() => setOpen(false)}
+                  className="inline-flex items-center gap-1 rounded-md px-3 py-2.5 text-base font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                >
+                  {t("citania")}
+                  <ArrowUpRight className="size-4" />
+                </ProductLink>
               </nav>
               <div className="mt-auto p-4">
                 <BookCallButton

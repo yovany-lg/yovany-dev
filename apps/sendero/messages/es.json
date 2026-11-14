@@ -10,7 +10,8 @@
     "allServices": "Todos los servicios",
     "backHome": "Volver al inicio",
     "notFoundTitle": "Página no encontrada",
-    "notFoundText": "Parece que este sendero no lleva a ningún lado. Volvamos a terreno conocido."
+    "notFoundText": "Parece que este sendero no lleva a ningún lado. Volvamos a terreno conocido.",
+    "visitCitania": "Conoce Citania"
   },
   "nav": {
     "home": "Inicio",
@@ -19,45 +20,64 @@
     "about": "Nosotros",
     "contact": "Contacto",
     "menu": "Menú",
-    "toggleLocale": "English"
+    "toggleLocale": "English",
+    "citania": "Citania",
+    "privacy": "Aviso de privacidad"
   },
   "hero": {
     "eyebrow": "Agencia de software",
-    "title": "Construimos apps web, móviles y <accent>agentes de IA</accent> que llegan a producción.",
-    "subtitle": "Sendero es tu equipo de producto: diseñamos, construimos y lanzamos software a medida — desde aplicaciones completas hasta agentes de IA y automatizaciones en WhatsApp.",
+    "title": "La agencia detrás de <accent>Citania</accent> — y de tu próximo producto.",
+    "subtitle": "Sendero es la agencia de software de Yovany Luis. Construimos y operamos productos propios — el primero es Citania — y hacemos software a medida para empresas que necesitan llegar a producción.",
     "trust": {
-      "one": "Entrega en semanas",
-      "two": "Stack moderno",
-      "three": "Comunicación directa"
+      "one": "Citania, en producción",
+      "two": "Software a medida",
+      "three": "Trato directo con quien construye"
     }
   },
   "logos": {
     "title": "Construido con las herramientas que usan los mejores equipos"
   },
   "services": {
-    "eyebrow": "Servicios",
-    "title": "Todo lo que necesitas para llevar una idea a producto.",
-    "subtitle": "Cuatro capacidades, un mismo equipo. Combínalas según lo que tu proyecto necesita.",
+    "eyebrow": "Software a medida",
+    "title": "Software a medida, del mismo equipo que construye Citania.",
+    "subtitle": "Lo que aprendemos operando nuestros productos lo aplicamos a tu proyecto. Cuatro capacidades, combinables según lo que necesites.",
     "web": {
       "title": "Aplicaciones web",
       "description": "Plataformas, dashboards y SaaS con Next.js y React. Rápidas, escalables y listas para crecer.",
-      "points": ["SaaS y plataformas a medida", "Dashboards y paneles internos", "Rendimiento y SEO de primer nivel"]
+      "points": [
+        "SaaS y plataformas a medida",
+        "Dashboards y paneles internos",
+        "Rendimiento y SEO de primer nivel"
+      ]
     },
     "mobile": {
       "title": "Aplicaciones móviles",
       "description": "Apps para iOS y Android con React Native y Expo. Una sola base de código, experiencia nativa.",
-      "points": ["iOS y Android a la vez", "Publicación en las tiendas", "Notificaciones y offline"]
+      "points": [
+        "iOS y Android a la vez",
+        "Publicación en las tiendas",
+        "Notificaciones y offline"
+      ]
     },
     "ai": {
       "title": "Agentes de IA",
       "description": "Copilotos, asistentes y automatizaciones que razonan sobre tus datos y actúan por ti.",
-      "points": ["Asistentes sobre tus datos (RAG)", "Automatización de flujos", "Integración con tus sistemas"]
+      "points": [
+        "Asistentes sobre tus datos (RAG)",
+        "Automatización de flujos",
+        "Integración con tus sistemas"
+      ]
     },
     "whatsapp": {
-      "title": "Agentes de IA en WhatsApp",
-      "description": "Atiende, vende y da soporte 24/7 con un agente de IA integrado en WhatsApp Business.",
-      "points": ["Atención y ventas 24/7", "Integración con tu CRM", "Escala sin ampliar el equipo"]
-    }
+      "title": "WhatsApp e integraciones",
+      "description": "Automatizaciones e integraciones a medida sobre WhatsApp Business, tu CRM y tus sistemas internos.",
+      "points": [
+        "Flujos a medida en WhatsApp Business",
+        "Integración con tu CRM y sistemas internos",
+        "Para clínicas: Citania, listo para operar"
+      ]
+    },
+    "clinicNote": "¿Buscas atención por WhatsApp para una clínica? Eso es Citania: visita citania.mx."
   },
   "process": {
     "eyebrow": "Cómo trabajamos",
@@ -116,11 +136,17 @@
   },
   "work": {
     "eyebrow": "Proyectos",
-    "title": "El tipo de producto que construimos.",
-    "subtitle": "Ejemplos ilustrativos del trabajo que hacemos con nuestros clientes.",
-    "note": "Ejemplos ilustrativos. ¿Quieres ver casos concretos? Hablemos.",
+    "title": "Lo que construimos.",
+    "subtitle": "Nuestro propio producto en producción y ejemplos del tipo de software a medida que hacemos.",
+    "note": "Salvo Citania, son ejemplos ilustrativos. ¿Quieres ver casos concretos? Hablemos.",
     "resultLabel": "Resultado",
     "items": {
+      "citania": {
+        "name": "Citania",
+        "category": "Producto propio · WhatsApp + IA",
+        "description": "Agente de WhatsApp con IA, bandeja/CRM y agenda para clínicas. Diseñado, construido y operado por Sendero.",
+        "result": "En producción. Conócelo en citania.mx."
+      },
       "logistics": {
         "name": "Plataforma SaaS de logística",
         "category": "Aplicación web",
@@ -138,32 +164,27 @@
         "category": "Agente de IA",
         "description": "Asistente que responde sobre la documentación del producto y escala a un humano cuando hace falta.",
         "result": "Respuestas instantáneas y menos carga para el equipo."
-      },
-      "whatsappBot": {
-        "name": "Agente de ventas en WhatsApp",
-        "category": "WhatsApp + IA",
-        "description": "Agente que califica leads, agenda y responde 24/7 integrado con el CRM del cliente.",
-        "result": "Atención sin esperas y más oportunidades cerradas."
       }
     }
   },
   "about": {
     "eyebrow": "Nosotros",
     "title": "Somos Sendero.",
-    "lead": "Un equipo de producto que convierte ideas en software que la gente usa de verdad.",
+    "lead": "La agencia de software de Yovany Luis: productos propios como Citania y software a medida.",
     "body": [
-      "Sendero nació de una idea simple: la mayoría de los proyectos de software fracasan no por falta de tecnología, sino por falta de un camino claro. Nosotros trazamos ese sendero — del concepto a producción — y lo recorremos contigo.",
-      "Trabajamos como una extensión de tu equipo. Diseñamos, construimos y lanzamos con la misma exigencia con la que lo haríamos para nuestro propio producto, apoyándonos en un stack moderno y en IA donde aporta valor real.",
-      "Ya sea una aplicación completa, un agente de IA o una automatización en WhatsApp, nuestro objetivo es el mismo: que llegues a producción rápido y con algo de lo que estés orgulloso."
+      "Sendero es la agencia de software fundada por Yovany Luis, ingeniero de producto con más de ocho años construyendo software en producción. Trazamos el camino — del concepto a producción — y lo recorremos contigo.",
+      "Hacemos dos cosas. Construimos y operamos productos propios: el primero es Citania, atención por WhatsApp con IA para clínicas (citania.mx). Y desarrollamos software a medida — aplicaciones web y móviles, agentes de IA e integraciones — para empresas que necesitan llegar a producción.",
+      "Operar nuestros propios productos nos obliga a construir con la exigencia de quien vive con el resultado todos los días. Esa misma exigencia la llevamos a cada proyecto de cliente."
     ],
     "valuesTitle": "Lo que nos mueve",
     "ctaTitle": "¿Recorremos el sendero juntos?"
   },
   "cta": {
-    "title": "¿Listo para llevar tu idea a producción?",
-    "subtitle": "Agenda una llamada de 30 minutos o escríbenos por WhatsApp. Sin compromiso, respuesta el mismo día.",
+    "title": "¿Tienes un proyecto a medida?",
+    "subtitle": "Agenda una llamada de 30 minutos o escríbenos. Sin compromiso.",
     "primary": "Agenda una llamada",
-    "secondary": "Chatea por WhatsApp"
+    "secondary": "Chatea por WhatsApp",
+    "clinicNote": "¿Tienes una clínica? Citania está en citania.mx"
   },
   "contact": {
     "eyebrow": "Contacto",
@@ -188,38 +209,71 @@
       "submit": "Enviar mensaje",
       "submitting": "Enviando…",
       "success": "¡Gracias! Te responderemos muy pronto.",
-      "error": "Algo salió mal. Inténtalo de nuevo o escríbenos por WhatsApp.",
-      "invalid": "Revisa los campos marcados."
+      "error": "Algo salió mal. Inténtalo de nuevo o escríbenos por correo.",
+      "invalid": "Revisa los campos marcados.",
+      "privacy": "Al enviar este formulario aceptas nuestro <link>Aviso de privacidad</link>."
     }
   },
   "footer": {
-    "tagline": "Tu sendero de la idea al producto.",
+    "tagline": "La agencia de software detrás de Citania.",
     "servicesTitle": "Servicios",
     "companyTitle": "Empresa",
     "contactTitle": "Contacto",
     "rights": "Todos los derechos reservados.",
-    "madeWith": "Diseñado y construido por Sendero."
+    "madeWith": "Diseñado y construido por Sendero.",
+    "productsTitle": "Productos",
+    "privacy": "Aviso de privacidad"
   },
   "metadata": {
     "home": {
-      "title": "Sendero — Desarrollo de software, apps y agentes de IA",
-      "description": "Agencia de software que diseña y construye aplicaciones web, móviles, agentes de IA e integraciones de IA en WhatsApp. De la idea a producción."
+      "title": "Sendero — La agencia de software detrás de Citania",
+      "description": "Sendero es la agencia de software de Yovany Luis: productos propios como Citania (atención por WhatsApp con IA para clínicas) y software a medida — apps web y móviles, agentes de IA e integraciones."
     },
     "services": {
-      "title": "Servicios",
-      "description": "Desarrollo de aplicaciones web y móviles, agentes de IA e integraciones de IA en WhatsApp. Un solo equipo para llevar tu producto a producción."
+      "title": "Software a medida",
+      "description": "Aplicaciones web y móviles, agentes de IA e integraciones con WhatsApp y tus sistemas, del mismo equipo que construye Citania."
     },
     "work": {
       "title": "Proyectos",
-      "description": "El tipo de productos que construye Sendero: plataformas web, apps móviles y agentes de IA."
+      "description": "Citania, nuestro producto en producción, y el tipo de software a medida que construye Sendero."
     },
     "about": {
       "title": "Nosotros",
-      "description": "Sendero es un equipo de producto que convierte ideas en software que la gente usa."
+      "description": "Sendero es la agencia de software de Yovany Luis: productos propios como Citania y software a medida."
     },
     "contact": {
       "title": "Contacto",
       "description": "Hablemos de tu proyecto. Agenda una llamada o escríbenos por WhatsApp."
+    },
+    "privacy": {
+      "title": "Aviso de privacidad",
+      "description": "Aviso de privacidad integral de Sendero: qué datos personales recabamos, para qué los usamos y cómo ejercer tus derechos ARCO."
     }
+  },
+  "products": {
+    "eyebrow": "Productos",
+    "title": "Productos propios, construidos y operados por nosotros.",
+    "subtitle": "Además de proyectos a medida, en Sendero diseñamos, construimos y operamos nuestros propios productos. El primero es Citania.",
+    "citania": {
+      "label": "Producto 01 · En producción",
+      "name": "Citania",
+      "tagline": "Atención por WhatsApp con IA para clínicas.",
+      "description": "Un servicio administrado: un agente de IA responde cada mensaje de WhatsApp en segundos, pasa la conversación a recepción cuando hace falta y deja todo en una sola bandeja, con agenda integrada. Empezamos con clínicas dentales.",
+      "points": [
+        "Responde cada mensaje en segundos",
+        "Handoff claro a recepción",
+        "Conversaciones, contactos y agenda en una sola bandeja",
+        "Implementación y operación a cargo de nuestro equipo"
+      ],
+      "forClinics": "¿Tienes una clínica? Planes, precios y demo están en citania.mx.",
+      "cta": "Visitar citania.mx"
+    }
+  },
+  "privacy": {
+    "eyebrow": "Legal",
+    "title": "Aviso de privacidad",
+    "lead": "Cómo tratamos tus datos personales, conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.",
+    "updated": "Última actualización",
+    "languageNote": ""
   }
 }

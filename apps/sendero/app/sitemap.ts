@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { siteConfig } from "@/lib/site";
 
-const PAGES = ["", "/services", "/work", "/about", "/contact"];
+const PAGES = ["", "/services", "/work", "/about", "/contact", "/privacidad"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
@@ -11,8 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;
       entries.push({
         url: `${siteConfig.url}${prefix}${page}`,
-        changeFrequency: "monthly",
-        priority: page === "" ? 1 : 0.8,
+        changeFrequency: page === "/privacidad" ? "yearly" : "monthly",
+        priority: page === "" ? 1 : page === "/privacidad" ? 0.3 : 0.8,
       });
     }
   }
