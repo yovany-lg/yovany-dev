@@ -5,14 +5,7 @@
 export type AnalyticsEvent =
   | "cta_book_call"
   | "lead_captured"
-  | "lead_submit_error"
-  // Sistema de Clientes funnel — every event carries a `vertical` prop.
-  | "sc_whatsapp_click"
-  | "sc_cal_booking_click"
-  | "sc_calculator_used"
-  | "sc_faq_open"
-  | "sc_lead_submit"
-  | "sc_lead_error";
+  | "lead_submit_error";
 
 type Props = Record<string, string | number | boolean | undefined>;
 
