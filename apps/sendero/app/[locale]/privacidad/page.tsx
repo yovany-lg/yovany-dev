@@ -5,7 +5,7 @@ import { PageHero } from "@/components/layout/page-hero";
 import { Section } from "@/components/layout/section";
 import {
   PrivacyNotice,
-  PLACEHOLDERS,
+  NOTICE_FACTS,
 } from "@/components/sections/privacy-notice";
 
 export function generateMetadata({
@@ -31,7 +31,7 @@ export default async function PrivacyPage({
       <PageHero eyebrow={t("eyebrow")} title={t("title")} subtitle={t("lead")} />
       <Section>
         <div className="legal-meta">
-          {t("updated")}: {PLACEHOLDERS.fecha}
+          {t("updated")}: {NOTICE_FACTS.fecha}
           {languageNote && (
             <span className="mt-3 block normal-case tracking-normal">
               {languageNote}

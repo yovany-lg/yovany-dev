@@ -5,17 +5,17 @@ import { siteConfig } from "@/lib/site";
  * so the text is rendered in Spanish on both locales and lives here as JSX
  * (easy for a lawyer to review) instead of in the i18n catalogs.
  *
- * Bracketed values are placeholders that MUST be filled before relying on
- * this notice. Keep them in PLACEHOLDERS so they're easy to find and replace.
+ * Facts (address, contact email, dates) the notice relies on;
+ * keep them in NOTICE_FACTS so they are easy to review.
  */
-export const PLACEHOLDERS = {
-  domicilio: "[DOMICILIO]",
-  correo: "[CORREO DE CONTACTO]",
-  fecha: "[FECHA DE ÚLTIMA ACTUALIZACIÓN]",
-  conservacion: "[PLAZO DE CONSERVACIÓN, p. ej. 12 meses]",
+export const NOTICE_FACTS = {
+  domicilio: "Paseo Abelan 210, interior 60, Tlajomulco de Zúñiga, Jalisco, México",
+  correo: "hola@sendero.pro",
+  fecha: "14 de noviembre de 2026",
+  conservacion: "12 meses",
 } as const;
 
-const P = PLACEHOLDERS;
+const P = NOTICE_FACTS;
 
 export function PrivacyNotice() {
   return (

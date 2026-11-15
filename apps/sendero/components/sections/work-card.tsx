@@ -4,7 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { ProductLink } from "@/components/layout/product-link";
 import type { CtaLocation } from "@/lib/analytics";
 
-/** Citania first: it's Sendero's own product in production, not an example. */
+/** Citania first: it's Sendero's own product, not an example. */
 export const WORK_ITEMS = [
   "citania",
   "logistics",

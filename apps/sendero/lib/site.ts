@@ -23,11 +23,6 @@ export const siteConfig = {
   products: {
     citania: { name: "Citania", url: "https://citania.mx" },
   },
-  social: {
-    github: "https://github.com/sendero",
-    linkedin: "https://www.linkedin.com/company/sendero",
-    x: "https://x.com/sendero",
-  },
   locales: routing.locales,
   defaultLocale: routing.defaultLocale,
 } as const;

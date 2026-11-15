@@ -29,7 +29,7 @@
     "title": "The agency behind <accent>Citania</accent> — and your next product.",
     "subtitle": "Sendero is Yovany Luis's software agency. We build and run our own products — the first is Citania — and we build custom software for companies that need to get to production.",
     "trust": {
-      "one": "Citania, in production",
+      "one": "Citania, available",
       "two": "Custom software",
       "three": "Work directly with the builder"
     }
@@ -137,7 +137,7 @@
   "work": {
     "eyebrow": "Work",
     "title": "What we build.",
-    "subtitle": "Our own product in production, plus examples of the kind of custom software we build.",
+    "subtitle": "Our own product, plus examples of the kind of custom software we build.",
     "note": "Except for Citania, these are illustrative examples. Want to see concrete cases? Let's talk.",
     "resultLabel": "Result",
     "items": {
@@ -145,7 +145,7 @@
         "name": "Citania",
         "category": "Own product · WhatsApp + AI",
         "description": "AI WhatsApp agent, inbox/CRM and scheduling for clinics. Designed, built and operated by Sendero.",
-        "result": "In production. See it at citania.mx."
+        "result": "Available. See it at citania.mx."
       },
       "logistics": {
         "name": "Logistics SaaS platform",
@@ -189,11 +189,9 @@
   "contact": {
     "eyebrow": "Contact",
     "title": "Let's talk about your project.",
-    "subtitle": "Tell us what you have in mind. We reply the same day.",
+    "subtitle": "Tell us what you have in mind. We reply by email.",
     "bookTitle": "Book a call",
     "bookSubtitle": "Pick the time that works best for a 30-minute call.",
-    "whatsappTitle": "Prefer WhatsApp?",
-    "whatsappSubtitle": "Message us directly and we'll get right back to you.",
     "form": {
       "title": "Send us a message",
       "name": "Name",
@@ -235,7 +233,7 @@
     },
     "work": {
       "title": "Work",
-      "description": "Citania, our product in production, and the kind of custom software Sendero builds."
+      "description": "Citania, our product, and the kind of custom software Sendero builds."
     },
     "about": {
       "title": "About",
@@ -243,7 +241,7 @@
     },
     "contact": {
       "title": "Contact",
-      "description": "Let's talk about your project. Book a call or message us on WhatsApp."
+      "description": "Let's talk about your project. Book a call or email us."
     },
     "privacy": {
       "title": "Privacy notice",
@@ -255,7 +253,7 @@
     "title": "Our own products, built and run by us.",
     "subtitle": "Alongside custom projects, Sendero designs, builds and operates its own products. The first one is Citania.",
     "citania": {
-      "label": "Product 01 · In production",
+      "label": "Product 01 · Available",
       "name": "Citania",
       "tagline": "AI-powered WhatsApp attention for clinics.",
       "description": "A managed service: an AI agent replies to every WhatsApp message within seconds, hands the conversation to the front desk when needed and keeps everything in one inbox, with built-in scheduling. We're starting with dental clinics.",

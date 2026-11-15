@@ -29,7 +29,7 @@
     "title": "La agencia detrás de <accent>Citania</accent> — y de tu próximo producto.",
     "subtitle": "Sendero es la agencia de software de Yovany Luis. Construimos y operamos productos propios — el primero es Citania — y hacemos software a medida para empresas que necesitan llegar a producción.",
     "trust": {
-      "one": "Citania, en producción",
+      "one": "Citania, disponible",
       "two": "Software a medida",
       "three": "Trato directo con quien construye"
     }
@@ -137,7 +137,7 @@
   "work": {
     "eyebrow": "Proyectos",
     "title": "Lo que construimos.",
-    "subtitle": "Nuestro propio producto en producción y ejemplos del tipo de software a medida que hacemos.",
+    "subtitle": "Nuestro propio producto y ejemplos del tipo de software a medida que hacemos.",
     "note": "Salvo Citania, son ejemplos ilustrativos. ¿Quieres ver casos concretos? Hablemos.",
     "resultLabel": "Resultado",
     "items": {
@@ -145,7 +145,7 @@
         "name": "Citania",
         "category": "Producto propio · WhatsApp + IA",
         "description": "Agente de WhatsApp con IA, bandeja/CRM y agenda para clínicas. Diseñado, construido y operado por Sendero.",
-        "result": "En producción. Conócelo en citania.mx."
+        "result": "Disponible. Conócelo en citania.mx."
       },
       "logistics": {
         "name": "Plataforma SaaS de logística",
@@ -189,11 +189,9 @@
   "contact": {
     "eyebrow": "Contacto",
     "title": "Hablemos de tu proyecto.",
-    "subtitle": "Cuéntanos qué tienes en mente. Te respondemos el mismo día.",
+    "subtitle": "Cuéntanos qué tienes en mente. Te respondemos por correo.",
     "bookTitle": "Agenda una llamada",
     "bookSubtitle": "Elige el horario que mejor te venga para una llamada de 30 minutos.",
-    "whatsappTitle": "¿Prefieres WhatsApp?",
-    "whatsappSubtitle": "Escríbenos directamente y te atendemos al instante.",
     "form": {
       "title": "Envíanos un mensaje",
       "name": "Nombre",
@@ -235,7 +233,7 @@
     },
     "work": {
       "title": "Proyectos",
-      "description": "Citania, nuestro producto en producción, y el tipo de software a medida que construye Sendero."
+      "description": "Citania, nuestro producto, y el tipo de software a medida que construye Sendero."
     },
     "about": {
       "title": "Nosotros",
@@ -243,7 +241,7 @@
     },
     "contact": {
       "title": "Contacto",
-      "description": "Hablemos de tu proyecto. Agenda una llamada o escríbenos por WhatsApp."
+      "description": "Hablemos de tu proyecto. Agenda una llamada o escríbenos por correo."
     },
     "privacy": {
       "title": "Aviso de privacidad",
@@ -255,7 +253,7 @@
     "title": "Productos propios, construidos y operados por nosotros.",
     "subtitle": "Además de proyectos a medida, en Sendero diseñamos, construimos y operamos nuestros propios productos. El primero es Citania.",
     "citania": {
-      "label": "Producto 01 · En producción",
+      "label": "Producto 01 · Disponible",
       "name": "Citania",
       "tagline": "Atención por WhatsApp con IA para clínicas.",
       "description": "Un servicio administrado: un agente de IA responde cada mensaje de WhatsApp en segundos, pasa la conversación a recepción cuando hace falta y deja todo en una sola bandeja, con agenda integrada. Empezamos con clínicas dentales.",
